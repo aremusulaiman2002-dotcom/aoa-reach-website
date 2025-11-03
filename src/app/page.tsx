@@ -65,7 +65,7 @@ export default function Home() {
     { number: '2,000+', label: 'Students Reached' },
     { number: '14 Years', label: 'Water Crisis Solved' },
     { number: 'Multiple', label: 'Communities Served' },
-    { number: 'Thousands', label: 'Families Fed' }
+    { number: '10,000+', label: 'Families Fed' }
   ];
 
   return (
