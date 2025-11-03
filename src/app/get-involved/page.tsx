@@ -18,60 +18,60 @@ export default function GetInvolved() {
     skills: ''
   });
 
-const waysToHelp = [
-  {
-    icon: Users,
-    title: 'Volunteer',
-    description: 'Join our team on the ground and make a direct impact in communities.',
-    features: ['Flexible time commitments', 'Various skill sets needed', 'Training provided', 'Community immersion']
-  },
-  {
-    icon: Heart,
-    title: 'Donate',
-    description: 'Support our programs financially and help us reach more communities.',
-    features: ['One-time or recurring gifts', 'Project-specific funding', 'Transparent reporting', 'Tax deductible']
-  },
-  {
-    icon: HandHeart,
-    title: 'Partner',
-    description: 'Collaborate with us through corporate partnerships or organizational alliances.',
-    features: ['Corporate sponsorships', 'CSR initiatives', 'Strategic partnerships', 'Resource sharing']
-  },
-  {
-    icon: Gift,
-    title: 'In-Kind Support',
-    description: 'Donate goods, services, or expertise that can benefit our programs.',
-    features: ['Equipment donations', 'Professional services', 'Educational materials', 'Medical supplies']
-  }
-];
+  const waysToHelp = [
+    {
+      icon: Users,
+      title: 'Volunteer',
+      description: 'Join our team on the ground and make a direct impact in communities across Kwara State and Abuja.',
+      features: ['Flexible time commitments', 'Various skill sets needed', 'Training provided', 'Community immersion']
+    },
+    {
+      icon: Heart,
+      title: 'Donate',
+      description: 'Support our programs financially and help us reach more underserved communities.',
+      features: ['One-time or recurring gifts', 'Project-specific funding', 'Transparent reporting', 'Direct community impact']
+    },
+    {
+      icon: HandHeart,
+      title: 'Partner',
+      description: 'Collaborate with us through corporate partnerships or organizational alliances for greater impact.',
+      features: ['Corporate sponsorships', 'CSR initiatives', 'Strategic partnerships', 'Resource sharing']
+    },
+    {
+      icon: Gift,
+      title: 'In-Kind Support',
+      description: 'Donate goods, services, or expertise that can benefit our education and healthcare programs.',
+      features: ['Educational materials', 'Medical supplies', 'Professional services', 'Equipment donations']
+    }
+  ];
 
   const volunteerRoles = [
     {
-      title: 'Field Volunteer',
-      time: 'Flexible hours',
-      commitment: 'Part-time',
-      skills: ['Community engagement', 'Basic training provided'],
-      urgency: 'High need'
-    },
-    {
-      title: 'Education Facilitator',
-      time: 'Weekdays',
+      title: 'Education Volunteer',
+      time: 'Weekdays during school hours',
       commitment: 'Regular',
-      skills: ['Teaching experience', 'Curriculum development'],
-      urgency: 'Medium need'
+      skills: ['Teaching assistance', 'Mentorship', 'Child engagement'],
+      urgency: 'High need'
     },
     {
       title: 'Healthcare Assistant',
-      time: 'Flexible',
-      commitment: 'Part-time',
-      skills: ['Medical background', 'First aid training'],
+      time: 'Medical outreach days',
+      commitment: 'Event-based',
+      skills: ['Medical background', 'First aid training', 'Patient care'],
       urgency: 'High need'
     },
     {
-      title: 'Technical Specialist',
-      time: 'Remote possible',
-      commitment: 'Project-based',
-      skills: ['IT skills', 'Engineering', 'Agriculture'],
+      title: 'Community Mobilizer',
+      time: 'Flexible hours',
+      commitment: 'Part-time',
+      skills: ['Community engagement', 'Communication skills', 'Local knowledge'],
+      urgency: 'Medium need'
+    },
+    {
+      title: 'Skills Trainer',
+      time: 'Weekends or evenings',
+      commitment: 'Workshop-based',
+      skills: ['Vocational skills', 'Teaching ability', 'Entrepreneurship knowledge'],
       urgency: 'Growing need'
     }
   ];
@@ -88,7 +88,7 @@ const waysToHelp = [
     e.preventDefault();
     // Handle form submission here
     console.log('Form submitted:', formData);
-    alert('Thank you for your interest! We will contact you soon.');
+    alert('Thank you for your interest in AOA Reach! We will contact you soon.');
     setFormData({
       name: '',
       email: '',
@@ -130,7 +130,7 @@ const waysToHelp = [
               whileHover={{ scale: 1.05 }}
             >
               <div className="w-2 h-2 bg-[#08361d] rounded-full animate-pulse" />
-              <span className="text-gray-700 text-sm font-medium">Join Our Mission</span>
+              <span className="text-gray-700 text-sm font-medium">Reaching out, Touching lives</span>
             </motion.div>
 
             <motion.h1 
@@ -149,7 +149,7 @@ const waysToHelp = [
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              Discover meaningful ways to contribute your time, skills, and resources to create lasting change in communities.
+              Whether as a volunteer, donor, or partner, your support helps us continue this mission of hope and empowerment.
             </motion.p>
           </motion.div>
         </div>
@@ -167,7 +167,7 @@ const waysToHelp = [
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Ways to Make a Difference</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Choose how you'd like to contribute to our mission of creating sustainable impact.
+              Choose how you'd like to contribute to our mission of transforming lives through sustainable community development.
             </p>
           </motion.div>
 
@@ -188,12 +188,12 @@ const waysToHelp = [
                     : 'border-gray-100 shadow-sm hover:shadow-lg'
                 }`}>
                   <motion.div
-  className="w-16 h-16 rounded-2xl bg-[#08361d] flex items-center justify-center mb-6 text-white shadow-lg"
-  whileHover={{ rotate: 360, scale: 1.1 }}
-  transition={{ duration: 0.6 }}
->
-  <way.icon className="w-8 h-8" />
-</motion.div>
+                    className="w-16 h-16 rounded-2xl bg-[#08361d] flex items-center justify-center mb-6 text-white shadow-lg"
+                    whileHover={{ rotate: 360, scale: 1.1 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <way.icon className="w-8 h-8" />
+                  </motion.div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">{way.title}</h3>
                   <p className="text-gray-600 leading-relaxed mb-6">{way.description}</p>
                   <ul className="space-y-2">
@@ -224,7 +224,7 @@ const waysToHelp = [
             >
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Volunteer Opportunities</h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Find the perfect role that matches your skills and availability.
+                Join our dedicated team of volunteers making a direct impact in Kwara State and Abuja communities.
               </p>
             </motion.div>
 
@@ -298,9 +298,9 @@ const waysToHelp = [
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Let's Get Started</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Join Our Mission</h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Tell us about your interest and we'll help you find the best way to get involved.
+                Tell us about your interest and we'll help you find the best way to get involved with AOA Reach.
               </p>
             </motion.div>
 
@@ -412,7 +412,7 @@ const waysToHelp = [
                       value={formData.skills}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#08361d] focus:border-transparent transition-all duration-300"
-                      placeholder="e.g., Teaching, Medical, IT, etc."
+                      placeholder="e.g., Teaching, Medical, Community work, etc."
                     />
                   </div>
                 </div>
@@ -429,7 +429,7 @@ const waysToHelp = [
                     required
                     rows={5}
                     className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#08361d] focus:border-transparent transition-all duration-300"
-                    placeholder="Tell us about your motivation and how you'd like to help..."
+                    placeholder="Tell us about your motivation and how you'd like to help AOA Reach..."
                   />
                 </div>
 
@@ -458,9 +458,9 @@ const waysToHelp = [
             viewport={{ once: true }}
             className="text-center text-white"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Have Questions?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h2>
             <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-              Reach out to our team for more information about getting involved.
+              Reach out to our team for more information about getting involved with AOA Reach Charity Foundation.
             </p>
             <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
               <div className="flex items-center gap-3">
@@ -469,11 +469,11 @@ const waysToHelp = [
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-6 h-6" />
-                <span>+234 801 234 5678</span>
+                <span>+234 XXX XXX XXXX</span>
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="w-6 h-6" />
-                <span>Lagos, Nigeria</span>
+                <span>Kwara State & Abuja, Nigeria</span>
               </div>
             </div>
           </motion.div>

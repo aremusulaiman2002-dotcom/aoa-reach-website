@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { Book, Heart, Home, Users, TreePine, Stethoscope, ArrowRight, Filter, Target, X, Calendar, MapPin, Users as UsersIcon } from 'lucide-react';
+import { Book, Heart, Users, Stethoscope, ArrowRight, Filter, Target, X, Calendar, MapPin, Users as UsersIcon, Droplets, Utensils, Briefcase, Accessibility } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -31,128 +31,128 @@ export default function Programs() {
   const programs: Program[] = [
     {
       id: 1,
-      title: 'Education for All',
-      description: 'Providing quality education and learning resources to underserved communities, building foundations for brighter futures.',
-      fullDescription: 'Our Education for All initiative focuses on creating sustainable educational ecosystems in underserved communities. We build schools, train local teachers, provide learning materials, and implement digital literacy programs. Our holistic approach ensures that children receive quality education while communities are empowered to maintain and grow these educational resources long-term.',
+      title: 'Education Initiatives',
+      description: 'Providing school supplies, tuition support, and mentorship to help children stay in school and break the cycle of poverty.',
+      fullDescription: 'Our Education Initiatives focus on the Back-to-School Program that provides comprehensive educational support to disadvantaged students. We supply school materials, pay tuition fees for those in need, and offer mentorship programs across several schools in Kwara State. We believe education is the foundation of empowerment and work to ensure every child has the opportunity to learn and dream bigger.',
       icon: Book,
       category: 'education',
       status: 'active',
-      impact: '5,000+ children educated',
-      location: 'Multiple regions',
+      impact: '2,000+ students reached',
+      location: 'Kwara State Schools',
       duration: 'Ongoing',
-      volunteers: '200+',
+      volunteers: '50+',
       image: '/api/placeholder/400/250',
       color: 'from-blue-500 to-cyan-500',
       goals: [
-        'Build 10 new schools in remote areas',
-        'Train 500 local teachers',
-        'Provide digital literacy to 2,000 students',
-        'Establish community libraries'
+        'Provide school supplies to 5,000 students',
+        'Support tuition for 500 disadvantaged students',
+        'Establish mentorship programs in 20 schools',
+        'Reduce school dropout rate by 50%'
       ]
     },
     {
       id: 2,
-      title: 'Healthcare Access',
-      description: 'Ensuring communities have access to basic healthcare services, medical supplies, and health education programs.',
-      fullDescription: 'The Healthcare Access program addresses critical health needs through mobile clinics, community health worker training, and preventive care education. We focus on maternal and child health, infectious disease prevention, and chronic condition management. Our approach combines immediate medical care with long-term health system strengthening.',
+      title: 'Healthcare Outreach',
+      description: 'Organizing free medical outreaches and health awareness campaigns for low-income and rural communities.',
+      fullDescription: 'Our Healthcare Outreach program brings essential medical services directly to underserved communities. We organize free medical camps in partnership with organizations like Worthy Life Foundation, providing consultations, blood pressure checks, sugar level tests, and medications. Our volunteer-driven campaigns also promote health awareness on hygiene, nutrition, and wellness, ensuring communities have both treatment and preventive care knowledge.',
       icon: Stethoscope,
       category: 'healthcare',
       status: 'active',
-      impact: '10,000+ medical services',
-      location: 'Rural communities',
-      duration: '3+ years',
-      volunteers: '150+',
+      impact: 'Hundreds served in medical outreaches',
+      location: 'Kwara State & Rural Communities',
+      duration: 'Ongoing',
+      volunteers: '30+',
       image: '/api/placeholder/400/250',
       color: 'from-green-500 to-emerald-500',
       goals: [
-        'Establish 5 permanent health centers',
-        'Train 300 community health workers',
-        'Reduce child mortality by 40%',
-        'Provide health insurance to 5,000 families'
+        'Conduct quarterly medical outreaches',
+        'Serve 2,000+ patients annually',
+        'Train community health volunteers',
+        'Establish permanent health awareness programs'
       ]
     },
     {
       id: 3,
-      title: 'Community Housing',
-      description: 'Building sustainable housing solutions and improving living conditions for families in need.',
-      fullDescription: 'Our Community Housing initiative focuses on creating affordable, sustainable, and disaster-resilient housing solutions. We work with local materials and construction techniques while incorporating modern safety standards. Each project includes community training in maintenance and basic construction skills.',
-      icon: Home,
-      category: 'housing',
-      status: 'upcoming',
-      impact: '200+ homes built',
-      location: 'Urban slums',
+      title: 'Water and Sanitation',
+      description: 'Providing access to clean water through borehole projects and improving community sanitation standards.',
+      fullDescription: 'Our Water and Sanitation projects address the critical need for clean water in underserved communities. We recently provided a borehole to a Kwara community that had gone 14 years without reliable water access. This project has significantly improved living standards and reduced waterborne diseases. We focus on sustainable water solutions that communities can maintain long-term.',
+      icon: Droplets,
+      category: 'water',
+      status: 'active',
+      impact: '1 community transformed with clean water',
+      location: 'Kwara State Communities',
       duration: '2 years',
-      volunteers: '100+',
+      volunteers: '25+',
       image: '/api/placeholder/400/250',
-      color: 'from-orange-500 to-red-500',
+      color: 'from-cyan-500 to-blue-500',
       goals: [
-        'Build 500 sustainable homes',
-        'Train locals in construction skills',
-        'Implement waste management systems',
-        'Create community green spaces'
+        'Provide 5 more boreholes to water-scarce communities',
+        'Reduce waterborne diseases by 70%',
+        'Train communities in water resource management',
+        'Improve sanitation facilities in schools'
       ]
     },
     {
       id: 4,
-      title: 'Women Empowerment',
-      description: 'Creating opportunities for women through skill development, entrepreneurship, and leadership programs.',
-      fullDescription: 'The Women Empowerment program focuses on creating economic independence and leadership opportunities for women. Through vocational training, business development support, and leadership workshops, we help women become agents of change in their communities.',
-      icon: Users,
-      category: 'empowerment',
+      title: 'Feeding and Humanitarian Relief',
+      description: 'Addressing food insecurity through year-round food distribution programs and emergency relief support.',
+      fullDescription: 'Our Feeding and Humanitarian Relief program tackles food insecurity through regular food distributions and seasonal programs like Ramadan feeding. We support households in crisis and displaced children in IDP camps. Through partnerships with AOB Foundation, DKS Relief, Al-Fauz Foundation, No Hunger Initiative, Safma Farms, and others, we distribute thousands of food packs to vulnerable families across Kwara and Abuja.',
+      icon: Utensils,
+      category: 'relief',
       status: 'active',
-      impact: '2,000+ women trained',
-      location: 'Multiple locations',
-      duration: 'Ongoing',
+      impact: 'Thousands of families fed annually',
+      location: 'Kwara State & Abuja',
+      duration: 'Year-round',
       volunteers: '80+',
       image: '/api/placeholder/400/250',
-      color: 'from-purple-500 to-pink-500',
+      color: 'from-orange-500 to-amber-500',
       goals: [
-        'Establish women-led cooperatives',
-        'Provide microloans to 500 entrepreneurs',
-        'Create digital literacy programs',
-        'Develop leadership training curriculum'
+        'Distribute 10,000+ food packs annually',
+        'Support 500+ households in crisis',
+        'Expand Ramadan feeding program',
+        'Establish community food banks'
       ]
     },
     {
       id: 5,
-      title: 'Environmental Sustainability',
-      description: 'Promoting environmental conservation, tree planting, and sustainable community practices.',
-      fullDescription: 'Our Environmental Sustainability program addresses climate change and environmental degradation through community-led initiatives. We focus on reforestation, waste management, sustainable agriculture, and environmental education to create resilient ecosystems.',
-      icon: TreePine,
-      category: 'environment',
+      title: 'Empowerment and Livelihood',
+      description: 'Empowering individuals through skill acquisition programs and small business support for self-reliance.',
+      fullDescription: 'Our Empowerment and Livelihood program focuses on creating economic independence through vocational training and business support. We provide skill acquisition programs, donate sewing machines to aspiring tailors, and support small business development for women and youth. Our model ensures beneficiaries gain both the skills and tools needed to succeed, creating sustainable livelihoods and reducing dependency.',
+      icon: Briefcase,
+      category: 'empowerment',
       status: 'active',
-      impact: '50,000+ trees planted',
-      location: 'Forest communities',
-      duration: '5+ years',
-      volunteers: '300+',
+      impact: 'Women and youth equipped with skills',
+      location: 'Kwara State',
+      duration: 'Ongoing',
+      volunteers: '40+',
       image: '/api/placeholder/400/250',
-      color: 'from-emerald-500 to-teal-500',
+      color: 'from-purple-500 to-pink-500',
       goals: [
-        'Plant 100,000 native trees',
-        'Establish community nurseries',
-        'Train in sustainable farming',
-        'Reduce plastic waste by 60%'
+        'Train 200 women in vocational skills',
+        'Provide startup kits to 50 entrepreneurs',
+        'Establish 5 community cooperatives',
+        'Create 100+ sustainable livelihoods'
       ]
     },
     {
       id: 6,
-      title: 'Child Welfare',
-      description: 'Protecting and supporting vulnerable children through comprehensive care and development programs.',
-      fullDescription: 'The Child Welfare program provides comprehensive support for vulnerable children, including education, healthcare, nutrition, and psychological support. We work to reunite families, prevent child labor, and ensure every child has the opportunity to thrive.',
-      icon: Heart,
-      category: 'welfare',
-      status: 'upcoming',
-      impact: '1,000+ children supported',
-      location: 'Urban centers',
-      duration: '3 years',
-      volunteers: '120+',
+      title: 'Disability Support & Inclusion',
+      description: 'Promoting inclusion and providing assistive devices to restore mobility and confidence for people with disabilities.',
+      fullDescription: 'Our Disability Support & Inclusion program is committed to ensuring equal opportunities and dignity for persons with disabilities. We distribute walking clutches and other assistive devices, advocate for inclusive policies, and work to make communities more accessible. We believe every life deserves visibility and the opportunity to participate fully in society.',
+      icon: Accessibility,
+      category: 'disability',
+      status: 'active',
+      impact: 'Dozens provided with mobility aids',
+      location: 'Kwara State Communities',
+      duration: 'Ongoing',
+      volunteers: '20+',
       image: '/api/placeholder/400/250',
-      color: 'from-rose-500 to-pink-500',
+      color: 'from-indigo-500 to-purple-500',
       goals: [
-        'Establish child protection centers',
-        'Provide counseling services',
-        'Reunite families where possible',
-        'Ensure education access for all children'
+        'Distribute 100+ assistive devices annually',
+        'Advocate for disability-inclusive policies',
+        'Create awareness in 10 communities',
+        'Establish peer support networks'
       ]
     }
   ];
@@ -161,10 +161,10 @@ export default function Programs() {
     { key: 'all', label: 'All Programs', icon: Target },
     { key: 'education', label: 'Education', icon: Book },
     { key: 'healthcare', label: 'Healthcare', icon: Stethoscope },
-    { key: 'housing', label: 'Housing', icon: Home },
-    { key: 'empowerment', label: 'Empowerment', icon: Users },
-    { key: 'environment', label: 'Environment', icon: TreePine },
-    { key: 'welfare', label: 'Welfare', icon: Heart }
+    { key: 'water', label: 'Water & Sanitation', icon: Droplets },
+    { key: 'relief', label: 'Food Relief', icon: Utensils },
+    { key: 'empowerment', label: 'Empowerment', icon: Briefcase },
+    { key: 'disability', label: 'Disability Support', icon: Accessibility }
   ];
 
   const filteredPrograms = activeFilter === 'all' 
@@ -176,56 +176,55 @@ export default function Programs() {
       <Header />
       
       {/* Hero Section */}
-      {/* Hero Section */}
-<section className="pt-32 pb-20 relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50">
-  <div className="absolute inset-0">
-    <motion.div
-      className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
-      animate={{ scale: [1, 1.1, 1] }}
-      transition={{ duration: 8, repeat: Infinity }}
-    />
-    <motion.div
-      className="absolute top-40 right-10 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
-      animate={{ scale: [1.1, 1, 1.1] }}
-      transition={{ duration: 6, repeat: Infinity, delay: 1 }}
-    />
-  </div>
+      <section className="pt-32 pb-20 relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50">
+        <div className="absolute inset-0">
+          <motion.div
+            className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
+            animate={{ scale: [1, 1.1, 1] }}
+            transition={{ duration: 8, repeat: Infinity }}
+          />
+          <motion.div
+            className="absolute top-40 right-10 w-96 h-96 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
+            animate={{ scale: [1.1, 1, 1.1] }}
+            transition={{ duration: 6, repeat: Infinity, delay: 1 }}
+          />
+        </div>
 
-  <div className="container mx-auto px-4 text-center relative z-10">
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-    >
-      <motion.div
-        className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-gray-200 shadow-sm mb-8"
-        whileHover={{ scale: 1.05 }}
-      >
-        <div className="w-2 h-2 bg-[#08361d] rounded-full animate-pulse" />
-        <span className="text-gray-700 text-sm font-medium">Our Initiatives</span>
-      </motion.div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.div
+              className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-gray-200 shadow-sm mb-8"
+              whileHover={{ scale: 1.05 }}
+            >
+              <div className="w-2 h-2 bg-[#08361d] rounded-full animate-pulse" />
+              <span className="text-gray-700 text-sm font-medium">What We Do</span>
+            </motion.div>
 
-      <motion.h1 
-        className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-gray-900 via-[#08361d] to-gray-900 bg-clip-text text-transparent mb-6 leading-none"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.8 }}
-        style={{ lineHeight: '1.1' }}
-      >
-        Our Programs
-      </motion.h1>
+            <motion.h1 
+              className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-gray-900 via-[#08361d] to-gray-900 bg-clip-text text-transparent mb-6 leading-none"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              style={{ lineHeight: '1.1' }}
+            >
+              Our Programs
+            </motion.h1>
 
-      <motion.p 
-        className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-8"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.8 }}
-      >
-        Comprehensive initiatives designed to create sustainable impact and empower communities through targeted solutions.
-      </motion.p>
-    </motion.div>
-  </div>
-</section>
+            <motion.p 
+              className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+            >
+              Transforming lives through sustainable community development across Nigeria.
+            </motion.p>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Filter Section */}
       <section className="py-12 bg-white border-b border-gray-100">
@@ -462,9 +461,9 @@ export default function Programs() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Support Our Programs</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Get Involved</h2>
             <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-              Help us expand our impact and bring these vital programs to more communities in need.
+              Whether as a volunteer, donor, or partner, your support helps us continue this mission of hope and empowerment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <motion.button
@@ -472,7 +471,7 @@ export default function Programs() {
                 whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(255,255,255,0.2)' }}
                 whileTap={{ scale: 0.95 }}
               >
-                Donate Now
+                Join Our Mission
                 <Heart className="w-5 h-5" />
               </motion.button>
               <motion.button

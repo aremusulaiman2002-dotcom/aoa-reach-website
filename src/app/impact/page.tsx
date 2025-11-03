@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { Target, Users, Heart, TrendingUp, Award, Star, MapPin, Calendar, ArrowRight, X, Quote, User, Clock } from 'lucide-react';
+import { Target, Users, Heart, TrendingUp, Award, Star, MapPin, Calendar, ArrowRight, X, Quote, User, Clock, Book, Stethoscope, Droplets, Utensils, Briefcase, Accessibility } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -23,47 +23,47 @@ export default function Impact() {
   const [selectedStory, setSelectedStory] = useState<Story | null>(null);
 
   const impactStats = [
-    { icon: Users, value: '50,000+', label: 'Lives Impacted' },
-    { icon: Heart, value: '500+', label: 'Projects Completed' },
-    { icon: Target, value: '25+', label: 'Communities Served' },
-    { icon: TrendingUp, value: '95%', label: 'Success Rate' },
+    { icon: Users, value: '2,000+', label: 'Students Reached' },
+    { icon: Heart, value: '474', label: 'Healthcare Beneficiaries' },
+    { icon: Target, value: '5,000+', label: 'People with Clean Water' },
+    { icon: TrendingUp, value: '10,000+', label: 'Families Fed' },
   ];
 
   const yearlyData = {
     '2024': {
-      communities: 28,
-      projects: 145,
-      beneficiaries: 18500,
-      volunteers: 450,
+      communities: 15,
+      projects: 25,
+      beneficiaries: 5000,
+      volunteers: 120,
       highlights: [
-        'Expanded to 5 new regions',
-        'Launched digital education platform',
-        'Reduced child malnutrition by 40%',
-        'Trained 200 community health workers'
+        'Expanded education programs to Abuja',
+        'Conducted multiple medical outreaches',
+        'Distributed food packs to vulnerable families',
+        'Provided skills training for women and youth'
       ]
     },
     '2023': {
-      communities: 23,
-      projects: 120,
-      beneficiaries: 15200,
-      volunteers: 380,
+      communities: 12,
+      projects: 18,
+      beneficiaries: 3500,
+      volunteers: 85,
       highlights: [
-        'Built 3 new community centers',
-        'Provided clean water to 10,000 people',
-        'Established women empowerment programs',
-        'Reduced school dropout rate by 35%'
+        'Launched Back-to-School Initiative',
+        'Partnered with Worthy Life Foundation for healthcare',
+        'Provided borehole to community without water for 14 years',
+        'Distributed walking clutches to people with disabilities'
       ]
     },
     '2022': {
-      communities: 18,
-      projects: 98,
-      beneficiaries: 12500,
-      volunteers: 320,
+      communities: 8,
+      projects: 12,
+      beneficiaries: 2000,
+      volunteers: 50,
       highlights: [
-        'Launched healthcare access initiative',
-        'Distributed 5,000 educational kits',
-        'Trained 150 local entrepreneurs',
-        'Improved agricultural yields by 50%'
+        'Started small with education support',
+        'Began healthcare awareness campaigns',
+        'Initiated food distribution programs',
+        'Built foundation for community partnerships'
       ]
     }
   };
@@ -71,48 +71,87 @@ export default function Impact() {
   const successStories: Story[] = [
     {
       id: 1,
-      name: 'Amina Lawal',
-      location: 'Kano State',
-      story: 'Thanks to AOA Reach\'s education program, I was able to complete my studies and start my own tailoring business.',
-      fullStory: `Amina's journey began when she had to drop out of school due to financial constraints. Through AOA Reach's Education for All program, she received not only educational support but also vocational training in tailoring. 
+      name: 'Education Beneficiary',
+      location: 'Ilorin, Kwara State',
+      story: 'Thanks to AOA Reach\'s Back-to-School Initiative, I was able to continue my education and pursue my dreams.',
+      fullStory: `This student's journey began when financial constraints threatened to end their education. Through AOA Reach's Back-to-School Initiative, they received school supplies, paid tuition, and mentorship support across 10 schools in Kwara State.
 
-"Before AOA Reach, I had given up on my dreams. The program provided me with sewing machines, fabrics, and business training. Today, I run a successful tailoring business with five employees, all women from my community who I'm now training.
+"Before AOA Reach intervened, I had lost hope of completing my education. The foundation not only provided the financial support I needed but also gave me mentorship that helped me believe in myself again.
 
-The impact goes beyond just me - I'm able to support my family and create opportunities for others. Education truly is the key to breaking the cycle of poverty."`,
+Today, I'm excelling in school and looking forward to a brighter future. The impact of this support goes beyond just me - it gives hope to my entire family and shows our community that education is achievable for everyone."`,
       image: '/api/placeholder/400/400',
-      category: 'Education & Empowerment',
-      date: 'March 15, 2024',
-      duration: '2 years in program'
+      category: 'Education',
+      date: 'September 2023',
+      duration: '2 years of support'
     },
     {
       id: 2,
-      name: 'Chukwuma Okoro',
-      location: 'Enugu State',
-      story: 'The healthcare initiative saved my daughter\'s life with immediate care and follow-up treatment.',
-      fullStory: `Chukwuma's daughter, Nneoma, fell seriously ill with malaria complications. Without access to affordable healthcare, the situation seemed hopeless until AOA Reach's mobile clinic arrived in their community.
+      name: 'Healthcare Recipient',
+      location: 'Yeregi, Moro LGA',
+      story: 'The free medical outreach provided essential healthcare services that I couldn\'t afford otherwise.',
+      fullStory: `This community member benefited from AOA Reach's healthcare partnership with Worthy Life Foundation in Yeregi, where 394 adults and 80 children received free medical services.
 
-"The doctors from AOA Reach provided immediate treatment and followed up for weeks. They didn't just treat the illness; they educated our family on prevention and gave us mosquito nets.
+"I had been living with untreated health issues for years because I couldn't afford hospital visits. When AOA Reach came to our community with free medical services, I received proper consultation, blood pressure checks, and medications.
 
-Today, Nneoma is healthy and back in school. The healthcare workers still visit our community regularly, and many families have benefited from their services. This program has literally been a lifesaver for our community."`,
+The healthcare workers didn't just treat us; they educated us about preventive care and healthy living. This outreach brought relief to our entire community and showed us that someone cares about our wellbeing."`,
       image: '/api/placeholder/400/400',
       category: 'Healthcare',
-      date: 'January 8, 2024',
-      duration: '6 months of care'
+      date: 'June 2023',
+      duration: 'Ongoing support'
     },
     {
       id: 3,
-      name: 'Community Leaders',
-      location: 'Plateau State',
-      story: 'Sustainable farming practices helped double our yields and achieve food security for our community.',
-      fullStory: `The farming community in Plateau State was struggling with poor harvests and food insecurity. AOA Reach introduced modern agricultural techniques while preserving traditional knowledge.
+      name: 'Water Project Beneficiary',
+      location: 'Kwara State Community',
+      story: 'After 14 years without clean water, the borehole provided by AOA Reach transformed our community.',
+      fullStory: `This community member witnessed the transformation when AOA Reach provided a borehole to their community that had gone 14 years without reliable water access.
 
-"AOA Reach taught us crop rotation, organic fertilization, and water conservation methods. They provided better seeds and connected us with markets for our surplus.
+"For 14 years, we struggled to get clean water. Women and children had to walk long distances, and waterborne diseases were common in our community. When AOA Reach provided the borehole, it changed everything.
 
-Our yields have doubled, and for the first time, we have enough food for our families with extra to sell. The community has established a cooperative that manages our collective resources. This transformation has brought hope and prosperity to our entire village."`,
+Now we have clean water for drinking, cooking, and sanitation. Our children are healthier, and we have more time for productive activities. This single project has improved the lives of over 5,000 people in our area."`,
       image: '/api/placeholder/400/400',
-      category: 'Agriculture',
-      date: 'November 22, 2023',
-      duration: '18 months of partnership'
+      category: 'Water Access',
+      date: 'March 2023',
+      duration: 'Life-changing impact'
+    }
+  ];
+
+  const programAreas = [
+    {
+      icon: Book,
+      title: 'Education',
+      impact: '2,000+ students reached across 10 schools',
+      description: 'Back-to-School Initiative providing educational support'
+    },
+    {
+      icon: Stethoscope,
+      title: 'Healthcare',
+      impact: '450+ beneficiaries served in medical outreaches',
+      description: 'Free medical services with 15 volunteer health professionals'
+    },
+    {
+      icon: Droplets,
+      title: 'Water Access',
+      impact: '5,000+ people served with clean water',
+      description: '2 boreholes ending water scarcity in communities'
+    },
+    {
+      icon: Utensils,
+      title: 'Food Relief',
+      impact: '10,000+ families fed with 13,000+ food packs',
+      description: 'Year-round food distribution programs'
+    },
+    {
+      icon: Briefcase,
+      title: 'Empowerment',
+      impact: '67 people equipped with skills and tools',
+      description: 'Vocational training and business support'
+    },
+    {
+      icon: Accessibility,
+      title: 'Disability Support',
+      impact: '40 individuals provided with mobility aids',
+      description: 'Walking clutches distribution and inclusion advocacy'
     }
   ];
 
@@ -148,7 +187,7 @@ Our yields have doubled, and for the first time, we have enough food for our fam
               whileHover={{ scale: 1.05 }}
             >
               <div className="w-2 h-2 bg-[#08361d] rounded-full animate-pulse" />
-              <span className="text-gray-700 text-sm font-medium">Measuring Success</span>
+              <span className="text-gray-700 text-sm font-medium">Reaching out, Touching lives</span>
             </motion.div>
 
             <motion.h1 
@@ -167,7 +206,7 @@ Our yields have doubled, and for the first time, we have enough food for our fam
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              Tracking progress, celebrating milestones, and sharing stories of transformation from communities we serve.
+              Behind every number is a real story — of hope renewed, lives changed, and communities strengthened.
             </motion.p>
           </motion.div>
         </div>
@@ -183,9 +222,9 @@ Our yields have doubled, and for the first time, we have enough food for our fam
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Overall Impact</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Impact in Numbers</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Years of dedicated work creating sustainable change across communities.
+              Measurable change created through sustainable community development.
             </p>
           </motion.div>
 
@@ -216,6 +255,50 @@ Our yields have doubled, and for the first time, we have enough food for our fam
         </div>
       </section>
 
+      {/* Program Areas */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">What We Do</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Transforming lives across multiple program areas in Kwara State and Abuja.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {programAreas.map((program, index) => (
+              <motion.div
+                key={program.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-2xl transition-all duration-500 h-full group-hover:scale-105">
+                  <motion.div
+                    className="w-16 h-16 rounded-2xl bg-[#08361d] flex items-center justify-center mb-6 text-white shadow-lg"
+                    whileHover={{ rotate: 360, scale: 1.1 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <program.icon className="w-8 h-8" />
+                  </motion.div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{program.title}</h3>
+                  <p className="text-lg font-semibold text-[#08361d] mb-3">{program.impact}</p>
+                  <p className="text-gray-600 leading-relaxed">{program.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Yearly Progress */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="container mx-auto px-4">
@@ -226,9 +309,9 @@ Our yields have doubled, and for the first time, we have enough food for our fam
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Yearly Progress</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Journey</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Tracking our growth and impact year by year.
+              From small beginnings to creating meaningful impact across communities.
             </p>
           </motion.div>
 
@@ -280,7 +363,7 @@ Our yields have doubled, and for the first time, we have enough food for our fam
 
             {/* Highlights */}
             <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">{activeYear} Highlights</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">{activeYear} Achievements</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 {currentData.highlights.map((highlight, index) => (
                   <motion.div
@@ -310,9 +393,9 @@ Our yields have doubled, and for the first time, we have enough food for our fam
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Success Stories</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Transformation Stories</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Real stories of transformation from the communities we serve.
+              Real stories of hope and change from the communities we serve.
             </p>
           </motion.div>
 
@@ -467,7 +550,7 @@ Our yields have doubled, and for the first time, we have enough food for our fam
                     <div className="bg-[#08361d] rounded-xl p-6 text-white">
                       <h4 className="text-lg font-semibold mb-2">Impact Created</h4>
                       <p className="text-white/80">
-                        This story represents the real change happening in communities through our programs.
+                        This story represents the real change happening in communities through AOA Reach programs.
                       </p>
                     </div>
 
@@ -491,9 +574,9 @@ Our yields have doubled, and for the first time, we have enough food for our fam
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Be Part of Our Impact</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Join Our Mission</h2>
             <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-              Join us in creating more success stories and expanding our reach to communities in need.
+              Together, we can build a society where compassion meets opportunity, and every life counts.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <motion.button
@@ -501,7 +584,7 @@ Our yields have doubled, and for the first time, we have enough food for our fam
                 whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(255,255,255,0.2)' }}
                 whileTap={{ scale: 0.95 }}
               >
-                Support Our Work
+                Get Involved
                 <TrendingUp className="w-5 h-5 text-[#08361d]" />
               </motion.button>
               <motion.button
@@ -509,7 +592,7 @@ Our yields have doubled, and for the first time, we have enough food for our fam
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Share Your Story
+                Support Our Work
               </motion.button>
             </div>
           </motion.div>

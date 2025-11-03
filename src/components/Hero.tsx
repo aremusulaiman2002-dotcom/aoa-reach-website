@@ -1,9 +1,12 @@
 'use client';
 
 import { motion, Variants } from 'framer-motion';
-import { ArrowDown, Users } from 'lucide-react';
+import { ArrowDown, Users, MapPin } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function Hero() {
+  const router = useRouter();
+
   // Properly typed variants for container
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -28,10 +31,28 @@ export default function Hero() {
     }
   };
 
+  const handleGetInvolved = () => {
+    // Navigate to Get Involved page
+    router.push('/get-involved');
+  };
+
+  const handleLearnMore = () => {
+    // Navigate to About page
+    router.push('/about');
+  };
+
+  const handleScrollToContent = () => {
+    // Scroll to main content section
+    const element = document.getElementById('main-content');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="pt-20 md:pt-24 min-h-screen flex items-center justify-center px-4 relative overflow-hidden bg-gradient-to-br from-[#F5F5F5] via-white to-[#F5F5F5]">
       
-      {/* Animated Background Blobs - Enhanced with more spots */}
+      {/* Animated Background Blobs */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Main large bouncing blobs */}
         <motion.div
@@ -103,93 +124,6 @@ export default function Hero() {
             delay: 1.5
           }}
         />
-
-        {/* Small floating spots */}
-        <motion.div
-          className="absolute top-32 left-10 w-40 h-40 bg-[#08361d] opacity-3 rounded-full blur-3xl"
-          animate={{
-            y: [0, 12, 0],
-            x: [0, -8, 0],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 0.8
-          }}
-        />
-        
-        <motion.div
-          className="absolute bottom-32 right-32 w-36 h-36 bg-[#08361d] opacity-5 rounded-full blur-3xl"
-          animate={{
-            y: [0, -10, 0],
-            x: [0, 6, 0],
-          }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2.2
-          }}
-        />
-
-        {/* Extra tiny spots for depth */}
-        <motion.div
-          className="absolute top-1/3 right-20 w-24 h-24 bg-[#08361d] opacity-4 rounded-full blur-2xl"
-          animate={{
-            y: [0, 15, 0],
-            x: [0, -12, 0],
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1.2
-          }}
-        />
-        
-        <motion.div
-          className="absolute bottom-1/3 left-20 w-28 h-28 bg-[#08361d] opacity-3 rounded-full blur-2xl"
-          animate={{
-            y: [0, -12, 0],
-            x: [0, 10, 0],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 0.3
-          }}
-        />
-
-        {/* Corner spots */}
-        <motion.div
-          className="absolute top-16 right-16 w-32 h-32 bg-[#08361d] opacity-2 rounded-full blur-2xl"
-          animate={{
-            y: [0, 8, 0],
-            x: [0, -4, 0],
-          }}
-          transition={{
-            duration: 7,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2.5
-          }}
-        />
-        
-        <motion.div
-          className="absolute bottom-16 left-16 w-30 h-30 bg-[#08361d] opacity-3 rounded-full blur-2xl"
-          animate={{
-            y: [0, -6, 0],
-            x: [0, 4, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1.8
-          }}
-        />
       </div>
 
       <motion.div 
@@ -228,9 +162,23 @@ export default function Hero() {
           className="text-lg md:text-xl text-[#222222]/80 mb-8 max-w-2xl mx-auto leading-relaxed"
           variants={itemVariants}
         >
-          Creating positive change and uplifting communities through compassion, 
-          action, and sustainable impact.
+          A registered non-profit organization committed to transforming lives through compassion, service, and sustainable community development.
         </motion.p>
+
+        {/* Location Info */}
+        <motion.div 
+          className="flex items-center justify-center gap-6 mb-8 text-[#222222]/70"
+          variants={itemVariants}
+        >
+          <div className="flex items-center gap-2">
+            <MapPin className="w-4 h-4 text-[#08361d]" />
+            <span className="text-sm font-medium">Kwara State & Abuja</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Users className="w-4 h-4 text-[#08361d]" />
+            <span className="text-sm font-medium">Serving Multiple Communities</span>
+          </div>
+        </motion.div>
 
         {/* CTA Buttons */}
         <motion.div 
@@ -238,6 +186,7 @@ export default function Hero() {
           variants={itemVariants}
         >
           <motion.button 
+            onClick={handleGetInvolved}
             className="bg-[#08361d] text-white px-8 py-4 rounded-full font-semibold hover:bg-[#062814] transition-colors flex items-center gap-2"
             whileHover={{ 
               scale: 1.05, 
@@ -247,9 +196,10 @@ export default function Hero() {
             whileTap={{ scale: 0.95 }}
           >
             <Users className="w-5 h-5" />
-            Join Our Mission
+            Get Involved
           </motion.button>
           <motion.button 
+            onClick={handleLearnMore}
             className="border-2 border-[#08361d] text-[#08361d] px-8 py-4 rounded-full font-semibold hover:bg-[#08361d] hover:text-white transition-colors"
             whileHover={{ 
               scale: 1.05,
@@ -257,12 +207,25 @@ export default function Hero() {
             }}
             whileTap={{ scale: 0.95 }}
           >
-            Learn More
+            Learn About Our Work
           </motion.button>
+        </motion.div>
+
+        {/* Founder Quote */}
+        <motion.div
+          className="mt-12 max-w-2xl mx-auto"
+          variants={itemVariants}
+        >
+          <p className="text-[#222222]/70 italic text-lg leading-relaxed">
+            "True change doesn't start in boardrooms or big speeches — it starts in communities, when people decide to care for one another."
+          </p>
+          <p className="text-[#08361d] font-semibold mt-2 text-sm">
+            — Abdallah Abdulkadir, Founder
+          </p>
         </motion.div>
       </motion.div>
 
-
+    
     </section>
   );
 }

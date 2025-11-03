@@ -9,43 +9,38 @@ export default function About() {
   const values = [
     {
       icon: Heart,
-      title: 'Compassion First',
-      description: 'Every initiative begins with empathy and understanding of community needs.',
+      title: 'Compassion',
+      description: 'We lead with empathy and humanity in all our actions.',
     },
     {
       icon: Shield,
-      title: 'Integrity & Transparency',
-      description: 'We maintain the highest ethical standards in all our operations and reporting.',
+      title: 'Integrity',
+      description: 'We uphold transparency and accountability.',
     },
     {
       icon: Target,
-      title: 'Sustainable Impact',
-      description: 'Creating solutions that communities can maintain and build upon long-term.',
+      title: 'Service',
+      description: 'We are driven by purpose and impact, not profit.',
     },
     {
       icon: Users,
-      title: 'Community-Led',
-      description: 'Working alongside communities to co-create solutions that truly matter.',
+      title: 'Collaboration',
+      description: 'We work with individuals, organizations, and communities for lasting change.',
     },
     {
       icon: Globe,
-      title: 'Global Standards',
-      description: 'Implementing international best practices while respecting local contexts.',
-    },
-    {
-      icon: Star,
-      title: 'Excellence',
-      description: 'Striving for the highest quality in every program and partnership.',
+      title: 'Equity',
+      description: 'We believe everyone deserves equal access to opportunities and care.',
     }
   ];
 
   const milestones = [
-    { year: '2019', event: 'Foundation Established', description: 'AOA Reach was founded with a vision for sustainable community development' },
-    { year: '2020', event: 'First Major Initiative', description: 'Launched our flagship education and healthcare programs' },
-    { year: '2021', event: 'Community Expansion', description: 'Extended operations to multiple regions, impacting thousands' },
-    { year: '2022', event: 'Strategic Partnerships', description: 'Formed key partnerships with local and international organizations' },
-    { year: '2023', event: 'Program Innovation', description: 'Introduced innovative sustainable development models' },
-    { year: '2024', event: 'Growth Phase', description: 'Scaling successful programs and exploring new communities' }
+    { year: 'Foundation', event: 'Small Beginnings', description: 'Started as friends and volunteers helping families with school fees and essentials' },
+    { year: 'Growth', event: 'Kwara State Expansion', description: 'Expanded operations across Kwara State with education and healthcare initiatives' },
+    { year: 'Registration', event: 'Official Recognition', description: 'Became registered non-profit organization (RN 8056929)' },
+    { year: 'Expansion', event: 'FCT Abuja Reach', description: 'Extended programs to Federal Capital Territory, Abuja' },
+    { year: 'Partnerships', event: 'Strategic Collaborations', description: 'Partnered with Worthy Life Foundation, AOB Foundation, and others' },
+    { year: 'Impact', event: 'Community Transformation', description: 'Touched thousands of lives through sustainable development programs' }
   ];
 
   return (
@@ -84,7 +79,7 @@ export default function About() {
               whileHover={{ scale: 1.05 }}
             >
               <div className="w-2 h-2 bg-[#08361d] rounded-full animate-pulse" />
-              <span className="text-gray-700 text-sm font-medium">Our Story & Mission</span>
+              <span className="text-gray-700 text-sm font-medium">Reaching out, Touching lives</span>
             </motion.div>
 
             <motion.h1 
@@ -93,7 +88,7 @@ export default function About() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              About AOA Reach
+              Who We Are
             </motion.h1>
 
             <motion.p 
@@ -102,14 +97,53 @@ export default function About() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              Building sustainable futures through innovative community development and compassionate action.
+              AOA Reach Charity Foundation is a registered non-profit organization committed to transforming lives through compassion, service, and sustainable community development.
             </motion.p>
           </motion.div>
         </div>
       </section>
 
-      {/* Story Section with Timeline */}
+      {/* Mission & Vision Section */}
       <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">Our Mission & Vision</h2>
+              
+              <div className="grid md:grid-cols-2 gap-12">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-[#08361d] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Target className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Mission</h3>
+                  <p className="text-gray-600 text-lg leading-relaxed">
+                    To empower underserved communities through education, healthcare, and economic support, fostering self-reliance and sustainable development.
+                  </p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-[#08361d] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Star className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Vision</h3>
+                  <p className="text-gray-600 text-lg leading-relaxed">
+                    A society where every child and family can thrive — with access to quality education, basic healthcare, clean water, and the opportunity to live a dignified life.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Story Section with Timeline */}
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -118,7 +152,7 @@ export default function About() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Journey</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Story</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               From humble beginnings to creating meaningful impact across communities.
             </p>
@@ -135,7 +169,7 @@ export default function About() {
                   viewport={{ once: true }}
                   className="group"
                 >
-                  <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 h-full group-hover:scale-105">
+                  <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 h-full group-hover:scale-105">
                     <div className="text-3xl font-bold text-[#08361d] mb-2">{milestone.year}</div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-3">{milestone.event}</h3>
                     <p className="text-gray-600 leading-relaxed">{milestone.description}</p>
@@ -162,7 +196,7 @@ export default function About() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Values</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Core Values</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               The principles that guide every decision and action we take.
             </p>
@@ -204,9 +238,9 @@ export default function About() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Join Our Mission</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Get Involved</h2>
             <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-              Be part of creating sustainable change and building better futures for communities.
+              Whether as a volunteer, donor, or partner, your support helps us continue this mission of hope and empowerment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <motion.button
@@ -214,7 +248,7 @@ export default function About() {
                 whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(255,255,255,0.2)' }}
                 whileTap={{ scale: 0.95 }}
               >
-                Get Involved
+                Join Our Mission
                 <ArrowRight className="w-5 h-5" />
               </motion.button>
               <motion.button
