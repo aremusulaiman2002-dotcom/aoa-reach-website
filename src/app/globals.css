@@ -24,3 +24,52 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary: #08361d;
+  --secondary: #F5F5F5;
+  --accent: #222222;
+  --cta: #00B894;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--secondary);
+}
+
+/* Custom glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Selection styles */
+::selection {
+  background-color: rgba(8, 54, 29, 0.2);
+}
+
+::-moz-selection {
+  background-color: rgba(8, 54, 29, 0.2);
+}
