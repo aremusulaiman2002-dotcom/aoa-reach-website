@@ -217,7 +217,7 @@ export default function Hero() {
           variants={itemVariants}
         >
           <p className="text-[#222222]/70 italic text-lg leading-relaxed">
-            "True change doesn't start in boardrooms or big speeches — it starts in communities, when people decide to care for one another."
+            "True change doesn't start in boardrooms or big speeches — it starts in communities, where people decide to care for one another."
           </p>
           <p className="text-[#08361d] font-semibold mt-2 text-sm">
             — Abdallah Abdulkadir, Founder
