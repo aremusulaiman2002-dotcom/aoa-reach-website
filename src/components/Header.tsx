@@ -2,10 +2,13 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Heart, DollarSign } from 'lucide-react';
+import { Menu, X, DollarSign } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [logoError, setLogoError] = useState(false);
 
   const menuItems = [
     { name: 'Home', href: '/' },
@@ -24,41 +27,76 @@ export default function Header() {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
+          {/* Logo - Icon + |AOA REACH */}
           <motion.div 
             className="flex items-center"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            <motion.div 
-              className="w-10 h-10 bg-[#08361d] rounded-full flex items-center justify-center mr-3"
-              whileHover={{ rotate: 360 }}
-              transition={{ duration: 0.6 }}
-            >
-              <Heart className="text-white w-5 h-5" />
-            </motion.div>
-            <span className="text-[#222222] font-bold text-xl">AOA Reach</span>
+            <Link href="/" className="flex items-center gap-3">
+              {logoError ? (
+                // Fallback if icon fails to load
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-[#08361d] rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold text-lg">A</span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-[#222222] font-bold text-xl leading-tight">|AOA REACH</span>
+                    <span className="text-[#08361d] text-xs font-medium leading-tight">Charity Foundation</span>
+                  </div>
+                </div>
+              ) : (
+                // Standalone icon + |AOA REACH text
+                <div className="flex items-center gap-3">
+                  {/* Standalone Icon */}
+                  <motion.div 
+                    className="relative"
+                    whileHover={{ rotate: 360, scale: 1.1 }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <Image
+                      src="/aoa-icon.png" // Your standalone icon file
+                      alt="AOA Reach Icon"
+                      width={48} // Larger icon
+                      height={48} // Larger icon
+                      className="object-contain"
+                      priority
+                      onError={() => setLogoError(true)}
+                    />
+                  </motion.div>
+                  
+                  {/* |AOA REACH Text */}
+                  <div className="flex flex-col">
+                    <span className="text-[#08361d] font-bold text-2xl leading-tight tracking-tight">|AOA REACH</span>
+                  </div>
+                </div>
+              )}
+            </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {menuItems.map((item, index) => (
-              <motion.a
+              <Link
                 key={item.name}
                 href={item.href}
                 className="text-[#222222] hover:text-[#08361d] font-medium transition-colors relative"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
               >
-                {item.name}
-                <motion.div
-                  className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#08361d]"
-                  whileHover={{ width: '100%' }}
-                  transition={{ duration: 0.3 }}
-                />
-              </motion.a>
+                <motion.span
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                  className="block"
+                >
+                  {item.name}
+                  <motion.div
+                    className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#08361d]"
+                    whileHover={{ width: '100%' }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.span>
+              </Link>
             ))}
             <motion.button 
               className="bg-[#08361d] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#062814] transition-colors flex items-center gap-2"
@@ -111,17 +149,21 @@ export default function Header() {
             >
               <div className="flex flex-col space-y-4 py-4">
                 {menuItems.map((item, index) => (
-                  <motion.a
+                  <Link
                     key={item.name}
                     href={item.href}
                     className="text-[#222222] hover:text-[#08361d] font-medium py-2 px-4"
-                    initial={{ x: -20, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: index * 0.1 }}
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    {item.name}
-                  </motion.a>
+                    <motion.span
+                      initial={{ x: -20, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="block"
+                    >
+                      {item.name}
+                    </motion.span>
+                  </Link>
                 ))}
                 <motion.button 
                   className="bg-[#08361d] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#062814] transition-colors flex items-center justify-center gap-2 mx-4"
