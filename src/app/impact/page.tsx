@@ -187,11 +187,11 @@ Now we have clean water for drinking, cooking, and sanitation. Our children are 
               whileHover={{ scale: 1.05 }}
             >
               <div className="w-2 h-2 bg-[#08361d] rounded-full animate-pulse" />
-              <span className="text-gray-700 text-sm font-medium">Reaching out, Touching lives</span>
+              <span className="text-gray-700 text-sm font-medium font-sans">Reaching out, Touching lives</span>
             </motion.div>
 
             <motion.h1 
-              className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-gray-900 via-[#08361d] to-gray-900 bg-clip-text text-transparent mb-6 leading-none"
+              className="font-elegant text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-gray-900 via-[#08361d] to-gray-900 bg-clip-text text-transparent mb-6 leading-none"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
@@ -201,7 +201,7 @@ Now we have clean water for drinking, cooking, and sanitation. Our children are 
             </motion.h1>
 
             <motion.p 
-              className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-8"
+              className="font-elegant text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
@@ -222,8 +222,8 @@ Now we have clean water for drinking, cooking, and sanitation. Our children are 
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Impact in Numbers</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="font-elegant text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Impact in Numbers</h2>
+            <p className="font-elegant text-xl text-gray-600 max-w-2xl mx-auto">
               Measurable change created through sustainable community development.
             </p>
           </motion.div>
@@ -246,8 +246,8 @@ Now we have clean water for drinking, cooking, and sanitation. Our children are 
                   >
                     <stat.icon className="w-10 h-10" />
                   </motion.div>
-                  <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{stat.value}</div>
-                  <div className="text-gray-600 font-medium">{stat.label}</div>
+                  <div className="font-elegant text-3xl md:text-4xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                  <div className="font-sans text-gray-600 font-medium">{stat.label}</div>
                 </div>
               </motion.div>
             ))}
@@ -265,8 +265,8 @@ Now we have clean water for drinking, cooking, and sanitation. Our children are 
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">What We Do</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="font-elegant text-4xl md:text-5xl font-bold text-gray-900 mb-4">What We Do</h2>
+            <p className="font-elegant text-xl text-gray-600 max-w-2xl mx-auto">
               Transforming lives across multiple program areas in Kwara State and Abuja.
             </p>
           </motion.div>
@@ -289,9 +289,9 @@ Now we have clean water for drinking, cooking, and sanitation. Our children are 
                   >
                     <program.icon className="w-8 h-8" />
                   </motion.div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{program.title}</h3>
-                  <p className="text-lg font-semibold text-[#08361d] mb-3">{program.impact}</p>
-                  <p className="text-gray-600 leading-relaxed">{program.description}</p>
+                  <h3 className="font-elegant text-2xl font-bold text-gray-900 mb-4">{program.title}</h3>
+                  <p className="font-sans text-lg font-semibold text-[#08361d] mb-3">{program.impact}</p>
+                  <p className="font-sans text-gray-600 leading-relaxed">{program.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -309,8 +309,8 @@ Now we have clean water for drinking, cooking, and sanitation. Our children are 
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Journey</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="font-elegant text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Journey</h2>
+            <p className="font-elegant text-xl text-gray-600 max-w-2xl mx-auto">
               From small beginnings to creating meaningful impact across communities.
             </p>
           </motion.div>
@@ -321,7 +321,7 @@ Now we have clean water for drinking, cooking, and sanitation. Our children are 
               <motion.button
                 key={year}
                 onClick={() => setActiveYear(year)}
-                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 font-sans ${
                   activeYear === year
                     ? 'bg-[#08361d] text-white shadow-lg'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -344,26 +344,26 @@ Now we have clean water for drinking, cooking, and sanitation. Our children are 
           >
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center">
-                <div className="text-3xl font-bold text-[#08361d] mb-2">{currentData.communities}</div>
-                <div className="text-gray-600">Communities</div>
+                <div className="font-elegant text-3xl font-bold text-[#08361d] mb-2">{currentData.communities}</div>
+                <div className="font-sans text-gray-600">Communities</div>
               </div>
               <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center">
-                <div className="text-3xl font-bold text-[#08361d] mb-2">{currentData.projects}</div>
-                <div className="text-gray-600">Projects</div>
+                <div className="font-elegant text-3xl font-bold text-[#08361d] mb-2">{currentData.projects}</div>
+                <div className="font-sans text-gray-600">Projects</div>
               </div>
               <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center">
-                <div className="text-3xl font-bold text-[#08361d] mb-2">{currentData.beneficiaries.toLocaleString()}</div>
-                <div className="text-gray-600">Beneficiaries</div>
+                <div className="font-elegant text-3xl font-bold text-[#08361d] mb-2">{currentData.beneficiaries.toLocaleString()}</div>
+                <div className="font-sans text-gray-600">Beneficiaries</div>
               </div>
               <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center">
-                <div className="text-3xl font-bold text-[#08361d] mb-2">{currentData.volunteers}</div>
-                <div className="text-gray-600">Volunteers</div>
+                <div className="font-elegant text-3xl font-bold text-[#08361d] mb-2">{currentData.volunteers}</div>
+                <div className="font-sans text-gray-600">Volunteers</div>
               </div>
             </div>
 
             {/* Highlights */}
             <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">{activeYear} Achievements</h3>
+              <h3 className="font-elegant text-2xl font-bold text-gray-900 mb-6 text-center">{activeYear} Achievements</h3>
               <div className="grid md:grid-cols-2 gap-4">
                 {currentData.highlights.map((highlight, index) => (
                   <motion.div
@@ -374,7 +374,7 @@ Now we have clean water for drinking, cooking, and sanitation. Our children are 
                     className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl"
                   >
                     <Award className="w-6 h-6 text-[#08361d] flex-shrink-0" />
-                    <span className="text-gray-700">{highlight}</span>
+                    <span className="font-sans text-gray-700">{highlight}</span>
                   </motion.div>
                 ))}
               </div>
@@ -393,8 +393,8 @@ Now we have clean water for drinking, cooking, and sanitation. Our children are 
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Transformation Stories</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="font-elegant text-4xl md:text-5xl font-bold text-gray-900 mb-4">Transformation Stories</h2>
+            <p className="font-elegant text-xl text-gray-600 max-w-2xl mx-auto">
               Real stories of hope and change from the communities we serve.
             </p>
           </motion.div>
@@ -414,7 +414,7 @@ Now we have clean water for drinking, cooking, and sanitation. Our children are 
                   <div className="h-48 bg-gradient-to-r from-gray-200 to-gray-300 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-[#08361d] to-emerald-600 opacity-20" />
                     <div className="absolute bottom-4 left-4">
-                      <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-sm font-medium text-[#08361d]">
+                      <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-sm font-medium text-[#08361d] font-sans">
                         {story.category}
                       </span>
                     </div>
@@ -424,15 +424,15 @@ Now we have clean water for drinking, cooking, and sanitation. Our children are 
                   <div className="p-6">
                     <div className="flex items-center gap-2 text-gray-500 mb-3">
                       <MapPin className="w-4 h-4 text-[#08361d]" />
-                      <span className="text-sm">{story.location}</span>
+                      <span className="font-sans text-sm">{story.location}</span>
                     </div>
                     
-                    <h3 className="text-xl font-bold text-gray-900 mb-4">{story.name}</h3>
-                    <p className="text-gray-600 leading-relaxed mb-4 italic">"{story.story}"</p>
+                    <h3 className="font-elegant text-xl font-bold text-gray-900 mb-4">{story.name}</h3>
+                    <p className="font-sans text-gray-600 leading-relaxed mb-4 italic">"{story.story}"</p>
                     
                     <motion.button
                       onClick={() => setSelectedStory(story)}
-                      className="flex items-center gap-2 text-[#08361d] font-semibold hover:text-[#062814] transition-colors"
+                      className="flex items-center gap-2 text-[#08361d] font-semibold hover:text-[#062814] transition-colors font-sans"
                       whileHover={{ x: 5 }}
                     >
                       Read Full Story
@@ -478,10 +478,10 @@ Now we have clean water for drinking, cooking, and sanitation. Our children are 
                       <User className="w-10 h-10 text-[#08361d]" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h2 className="text-4xl font-bold text-white drop-shadow-lg mb-2 leading-tight break-words">
+                      <h2 className="font-elegant text-4xl font-bold text-white drop-shadow-lg mb-2 leading-tight break-words">
                         {selectedStory.name}
                       </h2>
-                      <div className="flex items-center gap-4 text-white/90">
+                      <div className="flex items-center gap-4 text-white/90 font-sans">
                         <div className="flex items-center gap-2">
                           <MapPin className="w-4 h-4" />
                           <span>{selectedStory.location}</span>
@@ -501,15 +501,15 @@ Now we have clean water for drinking, cooking, and sanitation. Our children are 
                 <div className="grid lg:grid-cols-4 gap-8 mb-8">
                   <div className="lg:col-span-3">
                     {/* Story Category Badge */}
-                    <div className="inline-flex items-center gap-2 bg-[#08361d]/10 px-4 py-2 rounded-full mb-6">
+                    <div className="inline-flex items-center gap-2 bg-[#08361d]/10 px-4 py-2 rounded-full mb-6 font-sans">
                       <Quote className="w-4 h-4 text-[#08361d]" />
                       <span className="text-[#08361d] font-medium">{selectedStory.category}</span>
                     </div>
 
                     {/* Full Story */}
                     <div className="prose prose-lg max-w-none">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-6">Transformation Story</h3>
-                      <div className="text-gray-700 leading-relaxed text-lg space-y-4">
+                      <h3 className="font-elegant text-2xl font-bold text-gray-900 mb-6">Transformation Story</h3>
+                      <div className="text-gray-700 leading-relaxed text-lg space-y-4 font-sans">
                         {selectedStory.fullStory.split('\n\n').map((paragraph, index) => (
                           <p key={index} className="leading-8">
                             {paragraph}
@@ -521,8 +521,8 @@ Now we have clean water for drinking, cooking, and sanitation. Our children are 
 
                   <div className="space-y-6">
                     <div className="bg-gray-50 rounded-xl p-6">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-4">Story Details</h4>
-                      <div className="space-y-4">
+                      <h4 className="font-elegant text-lg font-semibold text-gray-900 mb-4">Story Details</h4>
+                      <div className="space-y-4 font-sans">
                         <div className="flex items-center gap-3">
                           <Calendar className="w-5 h-5 text-[#08361d]" />
                           <div>
@@ -548,13 +548,13 @@ Now we have clean water for drinking, cooking, and sanitation. Our children are 
                     </div>
 
                     <div className="bg-[#08361d] rounded-xl p-6 text-white">
-                      <h4 className="text-lg font-semibold mb-2">Impact Created</h4>
-                      <p className="text-white/80">
+                      <h4 className="font-elegant text-lg font-semibold mb-2">Impact Created</h4>
+                      <p className="font-sans text-white/80">
                         This story represents the real change happening in communities through AOA Reach programs.
                       </p>
                     </div>
 
-                    <button className="w-full bg-[#08361d] text-white py-3 rounded-xl font-semibold hover:bg-[#062814] transition-colors">
+                    <button className="w-full bg-[#08361d] text-white py-3 rounded-xl font-semibold hover:bg-[#062814] transition-colors font-sans">
                       Support More Stories Like This
                     </button>
                   </div>
@@ -574,13 +574,13 @@ Now we have clean water for drinking, cooking, and sanitation. Our children are 
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Join Our Mission</h2>
-            <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+            <h2 className="font-elegant text-4xl md:text-5xl font-bold text-white mb-6">Join Our Mission</h2>
+            <p className="font-elegant text-xl text-white/80 mb-8 max-w-2xl mx-auto">
               Together, we can build a society where compassion meets opportunity, and every life counts.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <motion.button
-                className="bg-white text-[#08361d] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center gap-3 text-lg"
+                className="bg-white text-[#08361d] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center gap-3 text-lg font-sans"
                 whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(255,255,255,0.2)' }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -588,7 +588,7 @@ Now we have clean water for drinking, cooking, and sanitation. Our children are 
                 <TrendingUp className="w-5 h-5 text-[#08361d]" />
               </motion.button>
               <motion.button
-                className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#08361d] transition-colors text-lg"
+                className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#08361d] transition-colors text-lg font-sans"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

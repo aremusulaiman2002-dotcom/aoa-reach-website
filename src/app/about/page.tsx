@@ -79,11 +79,11 @@ export default function About() {
               whileHover={{ scale: 1.05 }}
             >
               <div className="w-2 h-2 bg-[#08361d] rounded-full animate-pulse" />
-              <span className="text-gray-700 text-sm font-medium">Reaching out, Touching lives</span>
+              <span className="text-gray-700 text-sm font-medium font-sans">Reaching out, Touching lives</span>
             </motion.div>
 
             <motion.h1 
-              className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-gray-900 via-[#08361d] to-gray-900 bg-clip-text text-transparent mb-6"
+              className="font-elegant text-5xl md:text-7xl font-bold bg-gradient-to-r from-gray-900 via-[#08361d] to-gray-900 bg-clip-text text-transparent mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
@@ -92,7 +92,7 @@ export default function About() {
             </motion.h1>
 
             <motion.p 
-              className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+              className="font-elegant text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
@@ -114,15 +114,15 @@ export default function About() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">Our Mission & Vision</h2>
+              <h2 className="font-elegant text-4xl md:text-5xl font-bold text-gray-900 mb-8">Our Mission & Vision</h2>
               
               <div className="grid md:grid-cols-2 gap-12">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-[#08361d] rounded-full flex items-center justify-center mx-auto mb-6">
                     <Target className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Mission</h3>
-                  <p className="text-gray-600 text-lg leading-relaxed">
+                  <h3 className="font-elegant text-2xl font-bold text-gray-900 mb-4">Mission</h3>
+                  <p className="font-sans text-gray-600 text-lg leading-relaxed">
                     To empower underserved communities through education, healthcare, and economic support, fostering self-reliance and sustainable development.
                   </p>
                 </div>
@@ -131,8 +131,8 @@ export default function About() {
                   <div className="w-16 h-16 bg-[#08361d] rounded-full flex items-center justify-center mx-auto mb-6">
                     <Star className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Vision</h3>
-                  <p className="text-gray-600 text-lg leading-relaxed">
+                  <h3 className="font-elegant text-2xl font-bold text-gray-900 mb-4">Vision</h3>
+                  <p className="font-sans text-gray-600 text-lg leading-relaxed">
                     A society where every child and family can thrive — with access to quality education, basic healthcare, clean water, and the opportunity to live a dignified life.
                   </p>
                 </div>
@@ -152,8 +152,8 @@ export default function About() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Story</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="font-elegant text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Story</h2>
+            <p className="font-elegant text-xl text-gray-600 max-w-2xl mx-auto">
               From humble beginnings to creating meaningful impact across communities.
             </p>
           </motion.div>
@@ -170,9 +170,9 @@ export default function About() {
                   className="group"
                 >
                   <div className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 h-full group-hover:scale-105">
-                    <div className="text-3xl font-bold text-[#08361d] mb-2">{milestone.year}</div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">{milestone.event}</h3>
-                    <p className="text-gray-600 leading-relaxed">{milestone.description}</p>
+                    <div className="font-elegant text-3xl font-bold text-[#08361d] mb-2">{milestone.year}</div>
+                    <h3 className="font-elegant text-xl font-semibold text-gray-900 mb-3">{milestone.event}</h3>
+                    <p className="font-sans text-gray-600 leading-relaxed">{milestone.description}</p>
                     <motion.div
                       className="w-0 h-0.5 bg-gradient-to-r from-[#08361d] to-emerald-500 mt-4"
                       whileHover={{ width: '100%' }}
@@ -196,8 +196,8 @@ export default function About() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Core Values</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="font-elegant text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Core Values</h2>
+            <p className="font-elegant text-xl text-gray-600 max-w-2xl mx-auto">
               The principles that guide every decision and action we take.
             </p>
           </motion.div>
@@ -220,8 +220,8 @@ export default function About() {
                   >
                     <value.icon className="w-8 h-8" />
                   </motion.div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{value.title}</h3>
-                  <p className="text-gray-600 leading-relaxed text-lg">{value.description}</p>
+                  <h3 className="font-elegant text-2xl font-bold text-gray-900 mb-4">{value.title}</h3>
+                  <p className="font-sans text-gray-600 leading-relaxed text-lg">{value.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -238,11 +238,11 @@ export default function About() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Get Involved</h2>
-            <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+            <h2 className="font-elegant text-4xl md:text-5xl font-bold text-white mb-6">Get Involved</h2>
+            <p className="font-elegant text-xl text-white/80 mb-8 max-w-2xl mx-auto">
               Whether as a volunteer, donor, or partner, your support helps us continue this mission of hope and empowerment.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center font-sans">
               <motion.button
                 className="bg-white text-[#08361d] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center gap-3 text-lg"
                 whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(255,255,255,0.2)' }}

@@ -201,11 +201,11 @@ export default function Programs() {
               whileHover={{ scale: 1.05 }}
             >
               <div className="w-2 h-2 bg-[#08361d] rounded-full animate-pulse" />
-              <span className="text-gray-700 text-sm font-medium">What We Do</span>
+              <span className="text-gray-700 text-sm font-medium font-sans">What We Do</span>
             </motion.div>
 
             <motion.h1 
-              className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-gray-900 via-[#08361d] to-gray-900 bg-clip-text text-transparent mb-6 leading-none"
+              className="font-elegant text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-gray-900 via-[#08361d] to-gray-900 bg-clip-text text-transparent mb-6 leading-none"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
@@ -215,7 +215,7 @@ export default function Programs() {
             </motion.h1>
 
             <motion.p 
-              className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-8"
+              className="font-elegant text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
@@ -236,7 +236,7 @@ export default function Programs() {
             viewport={{ once: true }}
             className="flex flex-col items-center"
           >
-            <div className="flex items-center gap-2 mb-6">
+            <div className="flex items-center gap-2 mb-6 font-sans">
               <Filter className="w-5 h-5 text-gray-600" />
               <span className="text-gray-700 font-medium">Filter Programs</span>
             </div>
@@ -246,7 +246,7 @@ export default function Programs() {
                 <motion.button
                   key={filter.key}
                   onClick={() => setActiveFilter(filter.key)}
-                  className={`flex items-center gap-2 px-4 py-3 rounded-full font-medium transition-all duration-300 ${
+                  className={`flex items-center gap-2 px-4 py-3 rounded-full font-medium transition-all duration-300 font-sans ${
                     activeFilter === filter.key
                       ? 'bg-[#08361d] text-white shadow-lg'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -287,7 +287,7 @@ export default function Programs() {
                   <div className="h-48 bg-gradient-to-r from-gray-200 to-gray-300 relative overflow-hidden">
                     <div className={`absolute inset-0 bg-gradient-to-r ${program.color} opacity-20`} />
                     <div className="absolute top-4 right-4">
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                      <span className={`px-3 py-1 rounded-full text-xs font-medium font-sans ${
                         program.status === 'active' 
                           ? 'bg-green-100 text-green-800' 
                           : 'bg-yellow-100 text-yellow-800'
@@ -304,16 +304,16 @@ export default function Programs() {
 
                   {/* Program Content */}
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{program.title}</h3>
-                    <p className="text-gray-600 leading-relaxed mb-4">{program.description}</p>
+                    <h3 className="font-elegant text-xl font-bold text-gray-900 mb-3">{program.title}</h3>
+                    <p className="font-sans text-gray-600 leading-relaxed mb-4">{program.description}</p>
                     
                     <div className="flex items-center justify-between mt-6">
-                      <span className="text-sm font-medium text-[#08361d] bg-[#08361d]/10 px-3 py-1 rounded-full">
+                      <span className="font-sans text-sm font-medium text-[#08361d] bg-[#08361d]/10 px-3 py-1 rounded-full">
                         {program.impact}
                       </span>
                       <motion.button
                         onClick={() => setSelectedProgram(program)}
-                        className="flex items-center gap-2 text-[#08361d] font-semibold hover:text-[#062814] transition-colors"
+                        className="flex items-center gap-2 text-[#08361d] font-semibold hover:text-[#062814] transition-colors font-sans"
                         whileHover={{ x: 5 }}
                       >
                         Learn More
@@ -334,8 +334,8 @@ export default function Programs() {
               className="text-center py-12"
             >
               <Target className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-600 mb-2">No programs found</h3>
-              <p className="text-gray-500">Try selecting a different filter category</p>
+              <h3 className="font-elegant text-xl font-semibold text-gray-600 mb-2">No programs found</h3>
+              <p className="font-sans text-gray-500">Try selecting a different filter category</p>
             </motion.div>
           )}
         </div>
@@ -373,8 +373,8 @@ export default function Programs() {
                       <selectedProgram.icon className="w-8 h-8 text-[#08361d]" />
                     </div>
                     <div>
-                      <h2 className="text-3xl font-bold text-white drop-shadow-lg">{selectedProgram.title}</h2>
-                      <span className={`px-3 py-1 rounded-full text-sm font-medium ${
+                      <h2 className="font-elegant text-3xl font-bold text-white drop-shadow-lg">{selectedProgram.title}</h2>
+                      <span className={`px-3 py-1 rounded-full text-sm font-medium font-sans ${
                         selectedProgram.status === 'active' 
                           ? 'bg-green-100 text-green-800' 
                           : 'bg-yellow-100 text-yellow-800'
@@ -390,14 +390,14 @@ export default function Programs() {
               <div className="p-8">
                 <div className="grid md:grid-cols-3 gap-8 mb-8">
                   <div className="md:col-span-2">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">Program Overview</h3>
-                    <p className="text-gray-600 leading-relaxed text-lg mb-6">
+                    <h3 className="font-elegant text-2xl font-bold text-gray-900 mb-4">Program Overview</h3>
+                    <p className="font-sans text-gray-600 leading-relaxed text-lg mb-6">
                       {selectedProgram.fullDescription}
                     </p>
 
                     <div className="bg-gray-50 rounded-xl p-6">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-4">Program Goals</h4>
-                      <ul className="space-y-2">
+                      <h4 className="font-elegant text-lg font-semibold text-gray-900 mb-4">Program Goals</h4>
+                      <ul className="space-y-2 font-sans">
                         {selectedProgram.goals.map((goal: string, index: number) => (
                           <li key={index} className="flex items-center gap-3 text-gray-600">
                             <div className="w-2 h-2 bg-[#08361d] rounded-full" />
@@ -410,8 +410,8 @@ export default function Programs() {
 
                   <div className="space-y-6">
                     <div className="bg-gray-50 rounded-xl p-6">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-4">Program Details</h4>
-                      <div className="space-y-4">
+                      <h4 className="font-elegant text-lg font-semibold text-gray-900 mb-4">Program Details</h4>
+                      <div className="space-y-4 font-sans">
                         <div className="flex items-center gap-3">
                           <MapPin className="w-5 h-5 text-[#08361d]" />
                           <div>
@@ -437,11 +437,11 @@ export default function Programs() {
                     </div>
 
                     <div className="bg-[#08361d] rounded-xl p-6 text-white">
-                      <h4 className="text-lg font-semibold mb-2">Impact Achieved</h4>
-                      <p className="text-white/80">{selectedProgram.impact}</p>
+                      <h4 className="font-elegant text-lg font-semibold mb-2">Impact Achieved</h4>
+                      <p className="font-sans text-white/80">{selectedProgram.impact}</p>
                     </div>
 
-                    <button className="w-full bg-[#08361d] text-white py-3 rounded-xl font-semibold hover:bg-[#062814] transition-colors">
+                    <button className="w-full bg-[#08361d] text-white py-3 rounded-xl font-semibold hover:bg-[#062814] transition-colors font-sans">
                       Support This Program
                     </button>
                   </div>
@@ -461,13 +461,13 @@ export default function Programs() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Get Involved</h2>
-            <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+            <h2 className="font-elegant text-4xl md:text-5xl font-bold text-white mb-6">Get Involved</h2>
+            <p className="font-elegant text-xl text-white/80 mb-8 max-w-2xl mx-auto">
               Whether as a volunteer, donor, or partner, your support helps us continue this mission of hope and empowerment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <motion.button
-                className="bg-white text-[#08361d] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center gap-3 text-lg"
+                className="bg-white text-[#08361d] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center gap-3 text-lg font-sans"
                 whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(255,255,255,0.2)' }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -475,7 +475,7 @@ export default function Programs() {
                 <Heart className="w-5 h-5" />
               </motion.button>
               <motion.button
-                className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#08361d] transition-colors text-lg"
+                className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#08361d] transition-colors text-lg font-sans"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

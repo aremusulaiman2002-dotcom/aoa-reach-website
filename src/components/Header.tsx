@@ -41,7 +41,7 @@ export default function Header() {
                     <span className="text-white font-bold text-lg">A</span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-[#222222] font-bold text-xl leading-tight">|AOA REACH</span>
+                    <span className="text-[#222222] font-elegant font-bold text-xl leading-tight">|AOA REACH</span>
                     <span className="text-[#08361d] text-xs font-medium leading-tight">Charity Foundation</span>
                   </div>
                 </div>
@@ -67,7 +67,7 @@ export default function Header() {
                   
                   {/* |AOA REACH Text */}
                   <div className="flex flex-col">
-                    <span className="text-[#08361d] font-bold text-2xl leading-tight tracking-tight">|AOA REACH</span>
+                    <span className="text-[#08361d] font-elegant font-bold text-2xl leading-tight tracking-tight">AOA REACH</span>
                   </div>
                 </div>
               )}

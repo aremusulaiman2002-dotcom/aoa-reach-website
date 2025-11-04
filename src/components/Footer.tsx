@@ -40,7 +40,7 @@ export default function Footer() {
                 />
               </Link>
             </div>
-            <p className="text-white/80 mb-6 leading-relaxed text-lg">
+            <p className="font-sans text-white/80 mb-6 leading-relaxed text-lg">
               Creating positive change and uplifting African communities through compassion, 
               action, and sustainable impact. Registered NGO (RN 8056929).
             </p>
@@ -85,13 +85,13 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h3 className="font-bold text-xl mb-6">Quick Links</h3>
+            <h3 className="font-elegant font-bold text-xl mb-6">Quick Links</h3>
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={link.name}>
                   <Link href={link.href}>
                     <motion.span
-                      className="text-white/80 hover:text-white transition-colors block text-lg"
+                      className="font-sans text-white/80 hover:text-white transition-colors block text-lg"
                       whileHover={{ x: 5 }}
                     >
                       {link.name}
@@ -109,19 +109,19 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className="font-bold text-xl mb-6">Contact Us</h3>
+            <h3 className="font-elegant font-bold text-xl mb-6">Contact Us</h3>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-white/80" />
-                <span className="text-white/80 text-lg">contact@aoareach.org</span>
+                <span className="font-sans text-white/80 text-lg">contact@aoareach.org</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-white/80" />
-                <span className="text-white/80 text-lg">+234 XXX XXX XXXX</span>
+                <span className="font-sans text-white/80 text-lg">+234 XXX XXX XXXX</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-white/80" />
-                <span className="text-white/80 text-lg">Kwara State & Abuja, Nigeria</span>
+                <span className="font-sans text-white/80 text-lg">Kwara State & Abuja, Nigeria</span>
               </div>
             </div>
           </motion.div>
@@ -135,7 +135,7 @@ export default function Footer() {
           viewport={{ once: true }}
           className="border-t border-white/20 mt-8 pt-8 text-center"
         >
-          <p className="text-white/60 text-lg">
+          <p className="font-sans text-white/60 text-lg">
             © {currentYear} AOA Reach Charity Foundation. All rights reserved. | Registered NGO (RN 8056929)
           </p>
         </motion.div>

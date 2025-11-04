@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, Variants } from 'framer-motion';
-import { ArrowDown, Users, MapPin } from 'lucide-react';
+import { Users, MapPin } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 export default function Hero() {
@@ -39,14 +39,6 @@ export default function Hero() {
   const handleLearnMore = () => {
     // Navigate to About page
     router.push('/about');
-  };
-
-  const handleScrollToContent = () => {
-    // Scroll to main content section
-    const element = document.getElementById('main-content');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
   };
 
   return (
@@ -143,12 +135,12 @@ export default function Hero() {
             animate={{ scale: [1, 1.2, 1] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           />
-          <span className="text-[#222222] text-sm font-medium tracking-wide">Registered NGO (RN 8056929)</span>
+          <span className="text-[#222222] text-sm font-medium tracking-wide font-sans">Registered NGO (RN 8056929)</span>
         </motion.div>
 
-        {/* Main Heading */}
+        {/* Main Heading with Elegant Font */}
         <motion.h1 
-          className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#222222] mb-6 leading-tight"
+          className="font-elegant text-4xl md:text-6xl lg:text-7xl font-bold text-[#222222] mb-6 leading-tight"
           variants={itemVariants}
         >
           Reaching out,{' '}
@@ -157,9 +149,9 @@ export default function Hero() {
           </span>
         </motion.h1>
 
-        {/* Subtitle */}
+        {/* Subtitle with Elegant Font */}
         <motion.p 
-          className="text-lg md:text-xl text-[#222222]/80 mb-8 max-w-2xl mx-auto leading-relaxed"
+          className="font-elegant text-lg md:text-xl text-[#222222]/80 mb-8 max-w-2xl mx-auto leading-relaxed"
           variants={itemVariants}
         >
           A registered non-profit organization committed to transforming lives through compassion, service, and sustainable community development.
@@ -167,7 +159,7 @@ export default function Hero() {
 
         {/* Location Info */}
         <motion.div 
-          className="flex items-center justify-center gap-6 mb-8 text-[#222222]/70"
+          className="flex items-center justify-center gap-6 mb-8 text-[#222222]/70 font-sans"
           variants={itemVariants}
         >
           <div className="flex items-center gap-2">
@@ -182,7 +174,7 @@ export default function Hero() {
 
         {/* CTA Buttons */}
         <motion.div 
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center font-sans"
           variants={itemVariants}
         >
           <motion.button 
@@ -216,16 +208,14 @@ export default function Hero() {
           className="mt-12 max-w-2xl mx-auto"
           variants={itemVariants}
         >
-          <p className="text-[#222222]/70 italic text-lg leading-relaxed">
+          <p className="font-elegant text-[#222222]/70 italic text-lg leading-relaxed">
             "True change doesn't start in boardrooms or big speeches — it starts in communities, where people decide to care for one another."
           </p>
-          <p className="text-[#08361d] font-semibold mt-2 text-sm">
+          <p className="font-elegant text-[#08361d] font-semibold mt-2 text-sm">
             — Abdallah Abdulkadir, Founder
           </p>
         </motion.div>
       </motion.div>
-
-    
     </section>
   );
 }

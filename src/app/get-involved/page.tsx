@@ -130,11 +130,11 @@ export default function GetInvolved() {
               whileHover={{ scale: 1.05 }}
             >
               <div className="w-2 h-2 bg-[#08361d] rounded-full animate-pulse" />
-              <span className="text-gray-700 text-sm font-medium">Reaching out, Touching lives</span>
+              <span className="text-gray-700 text-sm font-medium font-sans">Reaching out, Touching lives</span>
             </motion.div>
 
             <motion.h1 
-              className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-gray-900 via-[#08361d] to-gray-900 bg-clip-text text-transparent mb-6 leading-none"
+              className="font-elegant text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-gray-900 via-[#08361d] to-gray-900 bg-clip-text text-transparent mb-6 leading-none"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
@@ -144,7 +144,7 @@ export default function GetInvolved() {
             </motion.h1>
 
             <motion.p 
-              className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-8"
+              className="font-elegant text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mt-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
@@ -165,8 +165,8 @@ export default function GetInvolved() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Ways to Make a Difference</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="font-elegant text-4xl md:text-5xl font-bold text-gray-900 mb-4">Ways to Make a Difference</h2>
+            <p className="font-elegant text-xl text-gray-600 max-w-2xl mx-auto">
               Choose how you'd like to contribute to our mission of transforming lives through sustainable community development.
             </p>
           </motion.div>
@@ -194,11 +194,11 @@ export default function GetInvolved() {
                   >
                     <way.icon className="w-8 h-8" />
                   </motion.div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{way.title}</h3>
-                  <p className="text-gray-600 leading-relaxed mb-6">{way.description}</p>
+                  <h3 className="font-elegant text-2xl font-bold text-gray-900 mb-4">{way.title}</h3>
+                  <p className="font-sans text-gray-600 leading-relaxed mb-6">{way.description}</p>
                   <ul className="space-y-2">
                     {way.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center gap-2 text-gray-600">
+                      <li key={featureIndex} className="flex items-center gap-2 text-gray-600 font-sans">
                         <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
                         <span className="text-sm">{feature}</span>
                       </li>
@@ -222,8 +222,8 @@ export default function GetInvolved() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Volunteer Opportunities</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              <h2 className="font-elegant text-4xl md:text-5xl font-bold text-gray-900 mb-4">Volunteer Opportunities</h2>
+              <p className="font-elegant text-xl text-gray-600 max-w-2xl mx-auto">
                 Join our dedicated team of volunteers making a direct impact in Kwara State and Abuja communities.
               </p>
             </motion.div>
@@ -239,8 +239,8 @@ export default function GetInvolved() {
                   className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500"
                 >
                   <div className="flex items-start justify-between mb-4">
-                    <h3 className="text-2xl font-bold text-gray-900">{role.title}</h3>
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                    <h3 className="font-elegant text-2xl font-bold text-gray-900">{role.title}</h3>
+                    <span className={`px-3 py-1 rounded-full text-xs font-medium font-sans ${
                       role.urgency === 'High need' 
                         ? 'bg-red-100 text-red-800'
                         : role.urgency === 'Medium need'
@@ -251,7 +251,7 @@ export default function GetInvolved() {
                     </span>
                   </div>
                   
-                  <div className="flex items-center gap-4 mb-4 text-gray-600">
+                  <div className="flex items-center gap-4 mb-4 text-gray-600 font-sans">
                     <div className="flex items-center gap-2">
                       <Clock className="w-4 h-4" />
                       <span className="text-sm">{role.time}</span>
@@ -263,10 +263,10 @@ export default function GetInvolved() {
                   </div>
 
                   <div className="mb-6">
-                    <h4 className="font-semibold text-gray-900 mb-2">Required Skills:</h4>
+                    <h4 className="font-semibold text-gray-900 mb-2 font-sans">Required Skills:</h4>
                     <div className="flex flex-wrap gap-2">
                       {role.skills.map((skill, skillIndex) => (
-                        <span key={skillIndex} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
+                        <span key={skillIndex} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-sans">
                           {skill}
                         </span>
                       ))}
@@ -274,7 +274,7 @@ export default function GetInvolved() {
                   </div>
 
                   <motion.button
-                    className="w-full bg-[#08361d] text-white py-3 rounded-xl font-semibold hover:bg-[#062814] transition-colors"
+                    className="w-full bg-[#08361d] text-white py-3 rounded-xl font-semibold hover:bg-[#062814] transition-colors font-sans"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
@@ -298,8 +298,8 @@ export default function GetInvolved() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Join Our Mission</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              <h2 className="font-elegant text-4xl md:text-5xl font-bold text-gray-900 mb-4">Join Our Mission</h2>
+              <p className="font-elegant text-xl text-gray-600 max-w-2xl mx-auto">
                 Tell us about your interest and we'll help you find the best way to get involved with AOA Reach.
               </p>
             </motion.div>
@@ -311,7 +311,7 @@ export default function GetInvolved() {
               viewport={{ once: true }}
               className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm"
             >
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6 font-sans">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -458,11 +458,11 @@ export default function GetInvolved() {
             viewport={{ once: true }}
             className="text-center text-white"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h2>
-            <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+            <h2 className="font-elegant text-4xl md:text-5xl font-bold mb-6">Get In Touch</h2>
+            <p className="font-elegant text-xl text-white/80 mb-8 max-w-2xl mx-auto">
               Reach out to our team for more information about getting involved with AOA Reach Charity Foundation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center font-sans">
               <div className="flex items-center gap-3">
                 <Mail className="w-6 h-6" />
                 <span>contact@aoareach.org</span>

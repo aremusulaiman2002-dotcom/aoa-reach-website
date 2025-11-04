@@ -1,15 +1,21 @@
+/* globals.css */
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #08361d;
+  --secondary: #F5F5F5;
+  --accent: #222222;
+  --cta: #00B894;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,26 +28,17 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-
-:root {
-  --primary: #08361d;
-  --secondary: #F5F5F5;
-  --accent: #222222;
-  --cta: #00B894;
-}
-
-body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: var(--secondary);
+}
+
+/* Font classes for easy usage */
+.font-elegant {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-sans {
+  font-family: 'Inter', sans-serif;
 }
 
 /* Custom glass effect */
@@ -65,11 +62,92 @@ body {
   animation: float 3s ease-in-out infinite;
 }
 
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Selection styles */
 ::selection {
   background-color: rgba(8, 54, 29, 0.2);
+  color: var(--foreground);
 }
 
 ::-moz-selection {
   background-color: rgba(8, 54, 29, 0.2);
+  color: var(--foreground);
+}
+
+/* Custom gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #08361d 0%, #00B894 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-[#08361d] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#062814] transition-all duration-300 transform hover:scale-105;
+}
+
+.btn-secondary {
+  @apply border-2 border-[#08361d] text-[#08361d] px-6 py-3 rounded-full font-semibold hover:bg-[#08361d] hover:text-white transition-all duration-300;
+}
+
+/* Custom card hover effects */
+.card-hover {
+  @apply transition-all duration-500 transform hover:scale-105 hover:shadow-2xl;
+}
+
+/* Custom underline animation */
+.underline-animate {
+  position: relative;
+}
+
+.underline-animate::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #08361d;
+  transition: width 0.3s ease-in-out;
+}
+
+.underline-animate:hover::after {
+  width: 100%;
+}
+
+/* Loading animation */
+@keyframes pulse-gentle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-gentle {
+  animation: pulse-gentle 2s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #08361d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #062814;
 }

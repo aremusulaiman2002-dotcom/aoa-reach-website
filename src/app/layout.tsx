@@ -1,18 +1,6 @@
 // app/layout.tsx
 import type { Metadata } from 'next'
 import './globals.css'
-import { Inter, Poppins } from 'next/font/google'
-
-const poppins = Poppins({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-  variable: '--font-poppins',
-})
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-})
 
 export const metadata: Metadata = {
   title: 'AOA Reach Charity Foundation - Reaching out, Touching lives',
@@ -25,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
+    <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -51,7 +39,7 @@ export default function RootLayout({
       <body className="font-sans antialiased bg-white">
         {children}
         
-        {/* Developer Credit - Subtle but visible */}
+        {/* Developer Credit */}
         <div className="fixed bottom-4 right-4 z-50">
           <a 
             href="https://sulaiman-portfolio-sigma.vercel.app/" 

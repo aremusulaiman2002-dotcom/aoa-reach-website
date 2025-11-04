@@ -83,8 +83,8 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#222222] mb-4">Our Mission & Vision</h2>
-            <p className="text-lg text-[#222222]/80 max-w-2xl mx-auto">
+            <h2 className="font-elegant text-3xl md:text-4xl font-bold text-[#222222] mb-4">Our Mission & Vision</h2>
+            <p className="font-elegant text-lg text-[#222222]/80 max-w-2xl mx-auto">
               Transforming lives through compassion, service, and sustainable community development across Kwara State and Abuja.
             </p>
           </motion.div>
@@ -107,8 +107,8 @@ export default function Home() {
                 >
                   <card.icon className="w-8 h-8" />
                 </motion.div>
-                <h3 className="text-xl font-bold text-[#222222] mb-4">{card.title}</h3>
-                <p className="text-[#222222]/80 leading-relaxed">{card.description}</p>
+                <h3 className="font-elegant text-xl font-bold text-[#222222] mb-4">{card.title}</h3>
+                <p className="font-sans text-[#222222]/80 leading-relaxed">{card.description}</p>
               </motion.div>
             ))}
           </div>
@@ -125,8 +125,8 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#222222] mb-4">What We Do</h2>
-            <p className="text-lg text-[#222222]/80 max-w-2xl mx-auto">
+            <h2 className="font-elegant text-3xl md:text-4xl font-bold text-[#222222] mb-4">What We Do</h2>
+            <p className="font-elegant text-lg text-[#222222]/80 max-w-2xl mx-auto">
               Comprehensive initiatives designed to bridge gaps in education, healthcare, empowerment, water access, and humanitarian relief.
             </p>
           </motion.div>
@@ -145,8 +145,8 @@ export default function Home() {
                 <div className="w-12 h-12 bg-[#08361d] rounded-lg flex items-center justify-center mb-4 text-white">
                   <program.icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold text-[#222222] mb-3">{program.title}</h3>
-                <p className="text-[#222222]/80 leading-relaxed">{program.description}</p>
+                <h3 className="font-elegant text-xl font-bold text-[#222222] mb-3">{program.title}</h3>
+                <p className="font-sans text-[#222222]/80 leading-relaxed">{program.description}</p>
               </motion.div>
             ))}
           </div>
@@ -163,8 +163,8 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-[#222222] mb-4">Our Impact</h2>
-            <p className="text-lg text-[#222222]/80 max-w-2xl mx-auto">
+            <h2 className="font-elegant text-3xl md:text-4xl font-bold text-[#222222] mb-4">Our Impact</h2>
+            <p className="font-elegant text-lg text-[#222222]/80 max-w-2xl mx-auto">
               In just a few years, AOA Reach has touched thousands of lives through direct community interventions.
             </p>
           </motion.div>
@@ -179,8 +179,8 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="text-3xl md:text-4xl font-bold text-[#08361d] mb-2">{stat.number}</div>
-                <div className="text-[#222222]/70 text-sm uppercase tracking-wider font-medium">{stat.label}</div>
+                <div className="font-elegant text-3xl md:text-4xl font-bold text-[#08361d] mb-2">{stat.number}</div>
+                <div className="font-sans text-[#222222]/70 text-sm uppercase tracking-wider font-medium">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -192,7 +192,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mt-12"
           >
-            <p className="text-lg text-[#222222]/80 italic max-w-2xl mx-auto">
+            <p className="font-elegant text-lg text-[#222222]/80 italic max-w-2xl mx-auto">
               "Behind every number is a real story — of hope renewed, lives changed, and communities strengthened."
             </p>
           </motion.div>
@@ -208,11 +208,11 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Get Involved</h2>
-            <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
+            <h2 className="font-elegant text-3xl md:text-4xl font-bold text-white mb-4">Get Involved</h2>
+            <p className="font-elegant text-lg text-white/80 mb-8 max-w-2xl mx-auto">
               Whether as a volunteer, donor, or partner, your support helps us continue this mission of hope and empowerment.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center font-sans">
               <motion.button 
                 onClick={() => router.push('/get-involved')}
                 className="bg-white text-[#08361d] px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center gap-2"
