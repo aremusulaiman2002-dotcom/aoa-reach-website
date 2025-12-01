@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { Book, Heart, Users, Stethoscope, ArrowRight, Filter, Target, X, Calendar, MapPin, Users as UsersIcon, Droplets, Utensils, Briefcase, Accessibility } from 'lucide-react';
+import { Book, Heart, Users, Stethoscope, ArrowRight, Filter, Target, X, Calendar, MapPin, Users as UsersIcon, Droplets, Utensils, Briefcase, Accessibility, Gift, Shield, Zap } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -31,13 +31,13 @@ export default function Programs() {
   const programs: Program[] = [
     {
       id: 1,
-      title: 'Education Initiatives',
-      description: 'Providing school supplies, tuition support, and mentorship to help children stay in school and break the cycle of poverty.',
-      fullDescription: 'Our Education Initiatives focus on the Back-to-School Program that provides comprehensive educational support to disadvantaged students. We supply school materials, pay tuition fees for those in need, and offer mentorship programs across several schools in Kwara State. We believe education is the foundation of empowerment and work to ensure every child has the opportunity to learn and dream bigger.',
+      title: 'Education Support',
+      description: 'Through our Back-to-School initiatives, we provide school supplies, learning materials, tuition support, and mentorship to disadvantaged students.',
+      fullDescription: 'Our Education Support program focuses on Back-to-School initiatives that provide school supplies, learning materials, tuition support, and mentorship to disadvantaged students, helping them remain in school and pursue their full potential. We believe education is the foundation of empowerment and work to ensure every child has the opportunity to learn and dream bigger.',
       icon: Book,
       category: 'education',
       status: 'active',
-      impact: '2,000+ students reached',
+      impact: '3,500+ students supported across 10+ schools',
       location: 'Kwara State Schools',
       duration: 'Ongoing',
       volunteers: '50+',
@@ -52,14 +52,14 @@ export default function Programs() {
     },
     {
       id: 2,
-      title: 'Healthcare Outreach',
-      description: 'Organizing free medical outreaches and health awareness campaigns for low-income and rural communities.',
-      fullDescription: 'Our Healthcare Outreach program brings essential medical services directly to underserved communities. We organize free medical camps in partnership with organizations like Worthy Life Foundation, providing consultations, blood pressure checks, sugar level tests, and medications. Our volunteer-driven campaigns also promote health awareness on hygiene, nutrition, and wellness, ensuring communities have both treatment and preventive care knowledge.',
+      title: 'Healthcare & Medical Outreach',
+      description: 'We organise free medical outreaches and health-education campaigns for low-income and underserved communities.',
+      fullDescription: 'Our Healthcare & Medical Outreach program organizes free medical outreaches and health-education campaigns for low-income and underserved communities, offering basic health screenings, preventive care, and public health awareness. We bring essential medical services directly to underserved communities, providing consultations, blood pressure checks, sugar level tests, and medications through volunteer-driven campaigns.',
       icon: Stethoscope,
       category: 'healthcare',
       status: 'active',
-      impact: 'Hundreds served in medical outreaches',
-      location: 'Kwara State & Rural Communities',
+      impact: 'Multiple communities reached with health support',
+      location: 'Kwara State & Abuja',
       duration: 'Ongoing',
       volunteers: '30+',
       image: '/api/placeholder/400/250',
@@ -73,20 +73,20 @@ export default function Programs() {
     },
     {
       id: 3,
-      title: 'Water and Sanitation',
-      description: 'Providing access to clean water through borehole projects and improving community sanitation standards.',
-      fullDescription: 'Our Water and Sanitation projects address the critical need for clean water in underserved communities. We recently provided a borehole to a Kwara community that had gone 14 years without reliable water access. This project has significantly improved living standards and reduced waterborne diseases. We focus on sustainable water solutions that communities can maintain long-term.',
+      title: 'Water & Sanitation',
+      description: 'We implement borehole projects and clean-water interventions in water-scarce communities.',
+      fullDescription: 'Our Water & Sanitation program implements borehole projects and clean-water interventions in water-scarce communities, addressing long-standing water challenges and improving public health outcomes. We recently provided a borehole to a Kwara community that had gone 7+ years without reliable water access. This project has significantly improved living standards and reduced waterborne diseases through sustainable water solutions.',
       icon: Droplets,
       category: 'water',
       status: 'active',
-      impact: '1 community transformed with clean water',
+      impact: 'Borehole projects completed in water-scarce communities',
       location: 'Kwara State Communities',
-      duration: '2 years',
+      duration: 'Ongoing',
       volunteers: '25+',
       image: '/api/placeholder/400/250',
       color: 'from-cyan-500 to-blue-500',
       goals: [
-        'Provide 5 more boreholes to water-scarce communities',
+        'Provide boreholes to water-scarce communities',
         'Reduce waterborne diseases by 70%',
         'Train communities in water resource management',
         'Improve sanitation facilities in schools'
@@ -94,13 +94,13 @@ export default function Programs() {
     },
     {
       id: 4,
-      title: 'Feeding and Humanitarian Relief',
-      description: 'Addressing food insecurity through year-round food distribution programs and emergency relief support.',
-      fullDescription: 'Our Feeding and Humanitarian Relief program tackles food insecurity through regular food distributions and seasonal programs like Ramadan feeding. We support households in crisis and displaced children in IDP camps. Through partnerships with AOB Foundation, DKS Relief, Al-Fauz Foundation, No Hunger Initiative, Safma Farms, and others, we distribute thousands of food packs to vulnerable families across Kwara and Abuja.',
+      title: 'Food & Humanitarian Relief',
+      description: 'We conduct year-round food distributions and emergency relief programmes for vulnerable families.',
+      fullDescription: 'Our Food & Humanitarian Relief program conducts year-round food distributions and emergency relief programmes, supporting individuals and families facing food insecurity, displacement, or economic hardship. Through partnerships with organizations like Worthy Life Foundation, AOB Foundation, DKS Relief, Al-Fauz Foundation, No Hunger Initiative, Safma Farms, and others, we distribute thousands of food packs to vulnerable families across Kwara and Abuja.',
       icon: Utensils,
       category: 'relief',
       status: 'active',
-      impact: 'Thousands of families fed annually',
+      impact: '10,000+ individuals and families supported',
       location: 'Kwara State & Abuja',
       duration: 'Year-round',
       volunteers: '80+',
@@ -109,19 +109,19 @@ export default function Programs() {
       goals: [
         'Distribute 10,000+ food packs annually',
         'Support 500+ households in crisis',
-        'Expand Ramadan feeding program',
+        'Expand emergency relief programs',
         'Establish community food banks'
       ]
     },
     {
       id: 5,
-      title: 'Empowerment and Livelihood',
-      description: 'Empowering individuals through skill acquisition programs and small business support for self-reliance.',
-      fullDescription: 'Our Empowerment and Livelihood program focuses on creating economic independence through vocational training and business support. We provide skill acquisition programs, donate sewing machines to aspiring tailors, and support small business development for women and youth. Our model ensures beneficiaries gain both the skills and tools needed to succeed, creating sustainable livelihoods and reducing dependency.',
-      icon: Briefcase,
+      title: 'Women & Youth Empowerment',
+      description: 'Our empowerment programmes support women and young people through skill-acquisition initiatives.',
+      fullDescription: 'Our Women & Youth Empowerment program supports women and young people through skill-acquisition initiatives and small-scale economic support, promoting independence and sustainable livelihoods. We provide skill acquisition programs, donate sewing machines to aspiring tailors, and support small business development for women and youth, ensuring beneficiaries gain both the skills and tools needed to succeed.',
+      icon: Zap,
       category: 'empowerment',
       status: 'active',
-      impact: 'Women and youth equipped with skills',
+      impact: '80+ women and youths empowered',
       location: 'Kwara State',
       duration: 'Ongoing',
       volunteers: '40+',
@@ -136,13 +136,34 @@ export default function Programs() {
     },
     {
       id: 6,
-      title: 'Disability Support & Inclusion',
-      description: 'Promoting inclusion and providing assistive devices to restore mobility and confidence for people with disabilities.',
-      fullDescription: 'Our Disability Support & Inclusion program is committed to ensuring equal opportunities and dignity for persons with disabilities. We distribute walking clutches and other assistive devices, advocate for inclusive policies, and work to make communities more accessible. We believe every life deserves visibility and the opportunity to participate fully in society.',
+      title: 'Menstrual Health & Dignity',
+      description: 'We deliver menstrual hygiene education and distribute sanitary products to secondary-school girls.',
+      fullDescription: 'Our Menstrual Health & Dignity program delivers menstrual hygiene education and distributes sanitary products to secondary-school girls, addressing myths, promoting awareness, and supporting menstrual dignity in schools and communities. We work to break taboos and ensure girls can attend school regularly without interruption due to lack of menstrual products.',
+      icon: Gift,
+      category: 'health',
+      status: 'active',
+      impact: '3,000+ menstrual hygiene pads distributed',
+      location: 'Kwara State Schools',
+      duration: 'Ongoing',
+      volunteers: '20+',
+      image: '/api/placeholder/400/250',
+      color: 'from-pink-500 to-rose-500',
+      goals: [
+        'Distribute 5,000+ sanitary pads annually',
+        'Educate 1,000+ girls on menstrual health',
+        'Establish menstrual product banks in schools',
+        'Train teachers on menstrual health education'
+      ]
+    },
+    {
+      id: 7,
+      title: 'Disability Inclusion',
+      description: 'We promote inclusion by providing mobility aids and advocating for dignity, access, and rights.',
+      fullDescription: 'Our Disability Inclusion program promotes inclusion by providing mobility aids and advocating for the dignity, access, and rights of persons living with disabilities. We distribute walking clutches and other assistive devices, advocate for inclusive policies, and work to make communities more accessible, ensuring every life deserves visibility and the opportunity to participate fully in society.',
       icon: Accessibility,
       category: 'disability',
       status: 'active',
-      impact: 'Dozens provided with mobility aids',
+      impact: 'Mobility aids provided to persons with disabilities',
       location: 'Kwara State Communities',
       duration: 'Ongoing',
       volunteers: '20+',
@@ -154,6 +175,27 @@ export default function Programs() {
         'Create awareness in 10 communities',
         'Establish peer support networks'
       ]
+    },
+    {
+      id: 8,
+      title: 'Clothing Support',
+      description: 'We distribute clothing to children and vulnerable individuals during festive seasons and throughout the year.',
+      fullDescription: 'Our Clothing Support program distributes clothing to children and vulnerable individuals during festive seasons and throughout the year, ensuring warmth, dignity, and care for those in need. We organize seasonal clothing drives and partner with local communities to identify those most in need of clothing assistance, providing both practical support and a sense of dignity.',
+      icon: Shield,
+      category: 'relief',
+      status: 'active',
+      impact: '1,500+ clothing items distributed',
+      location: 'Kwara State & Abuja',
+      duration: 'Year-round',
+      volunteers: '30+',
+      image: '/api/placeholder/400/250',
+      color: 'from-teal-500 to-emerald-500',
+      goals: [
+        'Distribute 2,000+ clothing items annually',
+        'Support vulnerable children and families',
+        'Organize seasonal clothing drives',
+        'Partner with local tailors for sustainable solutions'
+      ]
     }
   ];
 
@@ -162,8 +204,9 @@ export default function Programs() {
     { key: 'education', label: 'Education', icon: Book },
     { key: 'healthcare', label: 'Healthcare', icon: Stethoscope },
     { key: 'water', label: 'Water & Sanitation', icon: Droplets },
-    { key: 'relief', label: 'Food Relief', icon: Utensils },
-    { key: 'empowerment', label: 'Empowerment', icon: Briefcase },
+    { key: 'relief', label: 'Food & Relief', icon: Utensils },
+    { key: 'empowerment', label: 'Empowerment', icon: Zap },
+    { key: 'health', label: 'Health & Dignity', icon: Gift },
     { key: 'disability', label: 'Disability Support', icon: Accessibility }
   ];
 
@@ -201,7 +244,7 @@ export default function Programs() {
               whileHover={{ scale: 1.05 }}
             >
               <div className="w-2 h-2 bg-[#08361d] rounded-full animate-pulse" />
-              <span className="text-gray-700 text-sm font-medium font-sans">What We Do</span>
+              <span className="text-gray-700 text-sm font-medium font-sans">Reaching out, Touching lives</span>
             </motion.div>
 
             <motion.h1 
@@ -211,7 +254,7 @@ export default function Programs() {
               transition={{ delay: 0.2, duration: 0.8 }}
               style={{ lineHeight: '1.1' }}
             >
-              Our Programs
+              What We Do
             </motion.h1>
 
             <motion.p 
@@ -220,7 +263,7 @@ export default function Programs() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              Transforming lives through sustainable community development across Nigeria.
+              Comprehensive initiatives designed to bridge gaps in education, healthcare, empowerment, water access, and humanitarian relief across Kwara State and Abuja.
             </motion.p>
           </motion.div>
         </div>
@@ -271,7 +314,7 @@ export default function Programs() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
           >
             {filteredPrograms.map((program, index) => (
               <motion.div
@@ -463,7 +506,7 @@ export default function Programs() {
           >
             <h2 className="font-elegant text-4xl md:text-5xl font-bold text-white mb-6">Get Involved</h2>
             <p className="font-elegant text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-              Whether as a volunteer, donor, or partner, your support helps us continue this mission of hope and empowerment.
+              Whether as a volunteer, donor, partner, or advocate, your support enables us to continue building resilient communities and creating lasting impact. Together, we can do more.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <motion.button

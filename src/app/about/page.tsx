@@ -10,37 +10,37 @@ export default function About() {
     {
       icon: Heart,
       title: 'Compassion',
-      description: 'We lead with empathy and humanity in all our actions.',
+      description: 'We lead with empathy, responding to human needs with care and understanding.',
     },
     {
       icon: Shield,
       title: 'Integrity',
-      description: 'We uphold transparency and accountability.',
+      description: 'We operate transparently and responsibly, holding ourselves accountable to the communities we serve and our supporters.',
     },
     {
       icon: Target,
       title: 'Service',
-      description: 'We are driven by purpose and impact, not profit.',
+      description: 'We believe in action-driven impact — turning concern into meaningful support.',
     },
     {
       icon: Users,
       title: 'Collaboration',
-      description: 'We work with individuals, organizations, and communities for lasting change.',
+      description: 'We work with volunteers, partners, and local stakeholders to maximise impact.',
     },
     {
       icon: Globe,
       title: 'Equity',
-      description: 'We believe everyone deserves equal access to opportunities and care.',
+      description: 'We strive for fairness, inclusion, and dignity for all, regardless of background or circumstance.',
     }
   ];
 
   const milestones = [
-    { year: 'Foundation', event: 'Small Beginnings', description: 'Started as friends and volunteers helping families with school fees and essentials' },
+    { year: 'Foundation', event: 'Grassroots Beginnings', description: 'Started as friends and volunteers helping families with school fees and essentials' },
     { year: 'Growth', event: 'Kwara State Expansion', description: 'Expanded operations across Kwara State with education and healthcare initiatives' },
-    { year: 'Registration', event: 'Official Recognition', description: 'Became registered non-profit organization (RN 8056929)' },
+    { year: 'Registration', event: 'Official Establishment', description: 'Became registered non-profit organisation officially established in 2024' },
     { year: 'Expansion', event: 'FCT Abuja Reach', description: 'Extended programs to Federal Capital Territory, Abuja' },
-    { year: 'Partnerships', event: 'Strategic Collaborations', description: 'Partnered with Worthy Life Foundation, AOB Foundation, and others' },
-    { year: 'Impact', event: 'Community Transformation', description: 'Touched thousands of lives through sustainable development programs' }
+    { year: 'Impact', event: 'Community Transformation', description: 'Touched thousands of lives through sustainable community development' },
+    { year: 'Present', event: 'Continued Commitment', description: 'Continuing to bridge gaps and ensure no community is left behind' }
   ];
 
   return (
@@ -97,7 +97,7 @@ export default function About() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              AOA Reach Charity Foundation is a registered non-profit organization committed to transforming lives through compassion, service, and sustainable community development.
+              AOA Reach Charity Foundation is a registered non-profit organisation officially established in 2024, built on years of grassroots humanitarian work. We are committed to transforming lives through compassion, service, and sustainable community development.
             </motion.p>
           </motion.div>
         </div>
@@ -121,9 +121,9 @@ export default function About() {
                   <div className="w-16 h-16 bg-[#08361d] rounded-full flex items-center justify-center mx-auto mb-6">
                     <Target className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="font-elegant text-2xl font-bold text-gray-900 mb-4">Mission</h3>
+                  <h3 className="font-elegant text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
                   <p className="font-sans text-gray-600 text-lg leading-relaxed">
-                    To empower underserved communities through education, healthcare, and economic support, fostering self-reliance and sustainable development.
+                    Our mission is to empower underserved communities through targeted education support, healthcare initiatives, humanitarian relief, and economic empowerment programs that foster self-reliance and long-term development.
                   </p>
                 </div>
                 
@@ -131,9 +131,9 @@ export default function About() {
                   <div className="w-16 h-16 bg-[#08361d] rounded-full flex items-center justify-center mx-auto mb-6">
                     <Star className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="font-elegant text-2xl font-bold text-gray-900 mb-4">Vision</h3>
+                  <h3 className="font-elegant text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
                   <p className="font-sans text-gray-600 text-lg leading-relaxed">
-                    A society where every child and family can thrive — with access to quality education, basic healthcare, clean water, and the opportunity to live a dignified life.
+                    We envision a society where every child and family can thrive — with access to quality education, basic healthcare, clean water, dignity, and the opportunity to live a purposeful life.
                   </p>
                 </div>
               </div>
@@ -154,7 +154,7 @@ export default function About() {
           >
             <h2 className="font-elegant text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Story</h2>
             <p className="font-elegant text-xl text-gray-600 max-w-2xl mx-auto">
-              From humble beginnings to creating meaningful impact across communities.
+              Operating primarily in Kwara State and Abuja, AOA Reach exists to bridge the gap between vulnerable communities and access to essential services — ensuring that no child, family, or community is left behind due to circumstance or poverty.
             </p>
           </motion.div>
 
@@ -198,7 +198,7 @@ export default function About() {
           >
             <h2 className="font-elegant text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Core Values</h2>
             <p className="font-elegant text-xl text-gray-600 max-w-2xl mx-auto">
-              The principles that guide every decision and action we take.
+              At the core of AOA Reach are values that guide every decision and programme we implement.
             </p>
           </motion.div>
 
@@ -229,6 +229,40 @@ export default function About() {
         </div>
       </section>
 
+      {/* Founder's Message Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center"
+            >
+              <div className="w-24 h-24 bg-gradient-to-br from-[#08361d] to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-8">
+                <Users className="w-12 h-12 text-white" />
+              </div>
+              <h2 className="font-elegant text-4xl md:text-5xl font-bold text-gray-900 mb-8">Founder's Message</h2>
+              
+              <div className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 md:p-12 border border-gray-100 shadow-lg">
+                <p className="font-sans text-gray-700 text-lg md:text-xl leading-relaxed italic mb-8">
+                  "AOA Reach Charity Foundation was born from a simple but powerful belief that compassion, when backed by action, can change lives.
+                  <br /><br />
+                  What began as informal community support has grown into a structured organisation driven by purpose, accountability, and a deep commitment to people. Each project we undertake is shaped by real needs, local voices, and the belief that sustainable change is possible when communities are supported with dignity.
+                  <br /><br />
+                  Our journey is still beginning, and the road ahead is long, but our resolve remains strong. Together with our volunteers, partners, and supporters, we remain committed to reaching out and truly touching lives."
+                </p>
+                <div className="pt-6 border-t border-gray-200">
+                  <p className="font-elegant text-[#08361d] text-xl font-bold">Abdallah Abdulkadir</p>
+                  <p className="font-sans text-gray-600 mt-1">Founder, AOA Reach Charity Foundation</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-[#08361d] to-emerald-800">
         <div className="container mx-auto px-4 text-center">
@@ -240,7 +274,7 @@ export default function About() {
           >
             <h2 className="font-elegant text-4xl md:text-5xl font-bold text-white mb-6">Get Involved</h2>
             <p className="font-elegant text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-              Whether as a volunteer, donor, or partner, your support helps us continue this mission of hope and empowerment.
+              Whether as a volunteer, donor, partner, or advocate, your support enables us to continue building resilient communities and creating lasting impact. Together, we can do more.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center font-sans">
               <motion.button

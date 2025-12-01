@@ -209,8 +209,7 @@ export default function Hero() {
           variants={itemVariants}
         >
           <p className="font-elegant text-[#222222]/70 italic text-lg leading-relaxed">
-            "True change doesn't start in boardrooms or big speeches — it starts in communities, where people decide to care for one another."
-          </p>
+            "AOA Reach Charity Foundation was born from a simple but powerful belief that compassion, when backed by action, can change lives."          </p>
           <p className="font-elegant text-[#08361d] font-semibold mt-2 text-sm">
             — Abdallah Abdulkadir, Founder
           </p>

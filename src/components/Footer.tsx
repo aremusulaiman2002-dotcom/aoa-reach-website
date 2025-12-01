@@ -34,9 +34,9 @@ export default function Footer() {
                 <Image
                   src="/images/logo/aoa-reach-logo.png"
                   alt="AOA Reach Charity Foundation Logo"
-                  width={220}  // Increased from 180
-                  height={70}  // Increased from 48
-                  className="object-contain h-14 md:h-16 w-auto" // Larger size
+                  width={220}
+                  height={70}
+                  className="object-contain h-14 md:h-16 w-auto"
                 />
               </Link>
             </div>
@@ -127,7 +127,7 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Bottom Bar - No font class applied here */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -135,7 +135,7 @@ export default function Footer() {
           viewport={{ once: true }}
           className="border-t border-white/20 mt-8 pt-8 text-center"
         >
-          <p className="font-sans text-white/60 text-lg">
+          <p className="text-white/60 text-lg">
             © {currentYear} AOA Reach Charity Foundation. All rights reserved. | Registered NGO (RN 8056929)
           </p>
         </motion.div>

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Target, Heart, Star, Users, Book, Stethoscope, Droplets, Utensils, Zap } from 'lucide-react';
+import { Target, Heart, Star, Users, Book, Stethoscope, Droplets, Utensils, Zap, Gift, Shield, Activity } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
@@ -14,58 +14,68 @@ export default function Home() {
     {
       icon: Target,
       title: 'Our Vision',
-      description: 'A society where every child and family can thrive — with access to quality education, basic healthcare, clean water, and the opportunity to live a dignified life.',
+      description: 'We envision a society where every child and family can thrive — with access to quality education, basic healthcare, clean water, dignity, and the opportunity to live a purposeful life.',
     },
     {
       icon: Heart,
       title: 'Our Mission',
-      description: 'To empower underserved communities through education, healthcare, and economic support, fostering self-reliance and sustainable development.',
+      description: 'Our mission is to empower underserved communities through targeted education support, healthcare initiatives, humanitarian relief, and economic empowerment programs that foster self-reliance and long-term development.',
     },
     {
       icon: Star,
       title: 'Our Values',
-      description: 'Compassion, Integrity, Service, Collaboration, and Equity guide every action we take.',
+      description: 'At the core of AOA Reach are values that guide every decision and programme we implement: Compassion, Integrity, Service, Collaboration, and Equity.',
     }
   ];
 
   const programs = [
     {
       icon: Book,
-      title: 'Education Initiatives',
-      description: 'Back-to-School Initiative providing school supplies, tuition, and mentorship to disadvantaged students.'
+      title: 'Education Support',
+      description: 'Through our Back-to-School initiatives, we provide school supplies, learning materials, tuition support, and mentorship to disadvantaged students, helping them remain in school and pursue their full potential.'
     },
     {
       icon: Stethoscope,
-      title: 'Healthcare Outreach',
-      description: 'Free medical outreaches and health awareness campaigns for low-income communities.'
+      title: 'Healthcare & Medical Outreach',
+      description: 'We organise free medical outreaches and health-education campaigns for low-income and underserved communities, offering basic health screenings, preventive care, and public health awareness.'
     },
     {
       icon: Droplets,
       title: 'Water & Sanitation',
-      description: 'Providing boreholes and clean water access to communities in need.'
+      description: 'We implement borehole projects and clean-water interventions in water-scarce communities, addressing long-standing water challenges and improving public health outcomes.'
     },
     {
       icon: Utensils,
-      title: 'Feeding & Relief',
-      description: 'Year-round food distributions and humanitarian support for vulnerable families.'
+      title: 'Food & Humanitarian Relief',
+      description: 'We conduct year-round food distributions and emergency relief programmes, supporting individuals and families facing food insecurity, displacement, or economic hardship.'
     },
     {
       icon: Zap,
-      title: 'Empowerment Support',
-      description: 'Skill acquisition programs and small business support for self-reliance.'
+      title: 'Women & Youth Empowerment',
+      description: 'Our empowerment programmes support women and young people through skill-acquisition initiatives and small-scale economic support, promoting independence and sustainable livelihoods.'
+    },
+    {
+      icon: Gift,
+      title: 'Menstrual Health & Dignity',
+      description: 'We deliver menstrual hygiene education and distribute sanitary products to secondary-school girls, addressing myths, promoting awareness, and supporting menstrual dignity in schools and communities.'
     },
     {
       icon: Users,
       title: 'Disability Inclusion',
-      description: 'Mobility aids distribution and advocacy for persons with disabilities.'
+      description: 'We promote inclusion by providing mobility aids and advocating for the dignity, access, and rights of persons living with disabilities.'
+    },
+    {
+      icon: Shield,
+      title: 'Clothing Support',
+      description: 'We distribute clothing to children and vulnerable individuals during festive seasons and throughout the year, ensuring warmth, dignity, and care for those in need.'
     }
   ];
 
   const impactStats = [
-    { number: '2,000+', label: 'Students Reached' },
-    { number: '14 Years', label: 'Water Crisis Solved' },
-    { number: 'Multiple', label: 'Communities Served' },
-    { number: '10,000+', label: 'Families Fed' }
+    { number: '3,500+', label: 'Students Supported' },
+    { number: '10,000+', label: 'Individuals Reached' },
+    { number: '80+', label: 'Women & Youths Empowered' },
+    { number: '3,000+', label: 'Sanitary Pads Distributed' }
   ];
 
   return (
@@ -85,7 +95,7 @@ export default function Home() {
           >
             <h2 className="font-elegant text-3xl md:text-4xl font-bold text-[#222222] mb-4">Our Mission & Vision</h2>
             <p className="font-elegant text-lg text-[#222222]/80 max-w-2xl mx-auto">
-              Transforming lives through compassion, service, and sustainable community development across Kwara State and Abuja.
+              AOA Reach Charity Foundation is a registered non-profit organisation officially established in 2024, built on years of grassroots humanitarian work. We are committed to transforming lives through compassion, service, and sustainable community development.
             </p>
           </motion.div>
 
@@ -127,11 +137,11 @@ export default function Home() {
           >
             <h2 className="font-elegant text-3xl md:text-4xl font-bold text-[#222222] mb-4">What We Do</h2>
             <p className="font-elegant text-lg text-[#222222]/80 max-w-2xl mx-auto">
-              Comprehensive initiatives designed to bridge gaps in education, healthcare, empowerment, water access, and humanitarian relief.
+              Operating primarily in Kwara State and Abuja, AOA Reach exists to bridge the gap between vulnerable communities and access to essential services — ensuring that no child, family, or community is left behind due to circumstance or poverty.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {programs.map((program, index) => (
               <motion.div
                 key={program.title}
@@ -163,9 +173,9 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-elegant text-3xl md:text-4xl font-bold text-[#222222] mb-4">Our Impact</h2>
+            <h2 className="font-elegant text-3xl md:text-4xl font-bold text-[#222222] mb-4">Our Impact (So Far)</h2>
             <p className="font-elegant text-lg text-[#222222]/80 max-w-2xl mx-auto">
-              In just a few years, AOA Reach has touched thousands of lives through direct community interventions.
+              Despite being officially registered in 2024, the impact of AOA Reach reflects years of consistent community-based action across Kwara State and Abuja.
             </p>
           </motion.div>
 
@@ -193,7 +203,7 @@ export default function Home() {
             className="text-center mt-12"
           >
             <p className="font-elegant text-lg text-[#222222]/80 italic max-w-2xl mx-auto">
-              "Behind every number is a real story — of hope renewed, lives changed, and communities strengthened."
+              "Behind every number is a real story — of hope restored, lives improved, and communities strengthened."
             </p>
           </motion.div>
         </div>
@@ -210,7 +220,7 @@ export default function Home() {
           >
             <h2 className="font-elegant text-3xl md:text-4xl font-bold text-white mb-4">Get Involved</h2>
             <p className="font-elegant text-lg text-white/80 mb-8 max-w-2xl mx-auto">
-              Whether as a volunteer, donor, or partner, your support helps us continue this mission of hope and empowerment.
+              Whether as a volunteer, donor, partner, or advocate, your support enables us to continue building resilient communities and creating lasting impact. Together, we can do more.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center font-sans">
               <motion.button 
