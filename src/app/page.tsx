@@ -118,7 +118,8 @@ export default function Home() {
                   <card.icon className="w-8 h-8" />
                 </motion.div>
                 <h3 className="font-elegant text-xl font-bold text-[#222222] mb-4">{card.title}</h3>
-                <p className="font-sans text-[#222222]/80 leading-relaxed">{card.description}</p>
+                {/* Changed: Added text-justify for justified alignment */}
+                <p className="font-sans text-[#222222]/80 leading-relaxed text-justify">{card.description}</p>
               </motion.div>
             ))}
           </div>
@@ -156,7 +157,8 @@ export default function Home() {
                   <program.icon className="w-6 h-6" />
                 </div>
                 <h3 className="font-elegant text-xl font-bold text-[#222222] mb-3">{program.title}</h3>
-                <p className="font-sans text-[#222222]/80 leading-relaxed">{program.description}</p>
+                {/* Changed: Added text-justify for justified alignment */}
+                <p className="font-sans text-[#222222]/80 leading-relaxed text-justify">{program.description}</p>
               </motion.div>
             ))}
           </div>
