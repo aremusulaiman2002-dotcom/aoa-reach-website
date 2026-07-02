@@ -41,16 +41,14 @@ export default function ChatWidget() {
 
   const inputRef = useRef<HTMLInputElement>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
-  const panelRef = useRef<HTMLDivElement>(null)
   const toggleBtnRef = useRef<HTMLButtonElement>(null)
 
-  // Focus the input when panel opens
+  // Focus the input when panel opens; restore focus to launcher on close
   useEffect(() => {
     if (isOpen) {
       const t = setTimeout(() => inputRef.current?.focus(), 80)
       return () => clearTimeout(t)
     } else {
-      // Return focus to the toggle button when panel closes
       toggleBtnRef.current?.focus()
     }
   }, [isOpen])
@@ -68,6 +66,12 @@ export default function ChatWidget() {
     }
     document.addEventListener('keydown', onKey)
     return () => document.removeEventListener('keydown', onKey)
+  }, [isOpen])
+
+  // Lock body scroll while the panel is open (prevents background scroll on mobile)
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
   }, [isOpen])
 
   const sendMessage = useCallback(async () => {
@@ -118,21 +122,31 @@ export default function ChatWidget() {
   }
 
   return (
-    // Sits above the existing developer badge (bottom-4 right-4)
-    <div className="fixed bottom-20 right-4 z-[60] flex flex-col items-end gap-3">
-
-      {/* ── Chat panel ───────────────────────────────────────────────── */}
+    <>
+      {/* ── Chat panel ───────────────────────────────────────────────────────
+          Mobile  (< sm): fixed full-screen overlay (inset-0, 100dvh)
+          Desktop (≥ sm): compact bottom-right card, fully inside the viewport
+      ──────────────────────────────────────────────────────────────────── */}
       {isOpen && (
         <div
-          ref={panelRef}
           role="dialog"
           aria-label="AOA Reach chat assistant"
           aria-modal="false"
-          className="w-80 sm:w-96 bg-white rounded-2xl shadow-2xl border border-gray-100 flex flex-col overflow-hidden"
-          style={{ height: '480px' }}
+          className={[
+            // --- shared ---
+            'fixed z-[70] flex flex-col bg-white',
+            // --- mobile: full-screen overlay ---
+            'inset-0',
+            // --- desktop: anchored bottom-right card ---
+            'sm:inset-auto sm:bottom-4 sm:right-4',
+            'sm:w-[380px] sm:max-w-[calc(100vw-2rem)]',
+            'sm:rounded-2xl sm:shadow-2xl sm:border sm:border-gray-100',
+            // Height: target 600px, but never exceed the viewport on short screens
+            'sm:h-[600px] sm:max-h-[calc(100vh-6rem)]',
+          ].join(' ')}
         >
-          {/* Header */}
-          <div className="bg-[#08361d] px-4 py-3 flex items-center justify-between shrink-0">
+          {/* Header — close button lives here, not in the launcher */}
+          <div className="bg-[#08361d] px-4 py-3 flex items-center justify-between shrink-0 sm:rounded-t-2xl">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 bg-white/15 rounded-full flex items-center justify-center">
                 <MessageCircle className="w-4 h-4 text-white" aria-hidden="true" />
@@ -149,13 +163,13 @@ export default function ChatWidget() {
               aria-label="Close chat"
               className="text-white/60 hover:text-white transition-colors p-1 rounded-md hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/40"
             >
-              <X className="w-4 h-4" aria-hidden="true" />
+              <X className="w-5 h-5" aria-hidden="true" />
             </button>
           </div>
 
-          {/* Message list */}
+          {/* Message list — scrolls internally, never overflows the card */}
           <div
-            className="flex-1 overflow-y-auto p-4 space-y-3 scroll-smooth"
+            className="flex-1 overflow-y-auto p-4 space-y-3"
             aria-live="polite"
             aria-atomic="false"
             aria-relevant="additions"
@@ -196,8 +210,11 @@ export default function ChatWidget() {
             This assistant answers based on AOA's knowledge base only.
           </p>
 
-          {/* Input area */}
-          <div className="border-t border-gray-100 px-3 py-2.5 shrink-0">
+          {/* Input — safe-area-inset-bottom keeps it above the mobile browser bar */}
+          <div
+            className="border-t border-gray-100 px-3 py-2.5 shrink-0"
+            style={{ paddingBottom: 'max(0.625rem, env(safe-area-inset-bottom, 0.625rem))' }}
+          >
             <div className="flex items-center gap-2">
               <label htmlFor="chat-input" className="sr-only">
                 Message
@@ -234,21 +251,32 @@ export default function ChatWidget() {
         </div>
       )}
 
-      {/* ── Toggle button ────────────────────────────────────────────── */}
+      {/* ── Launcher bubble ──────────────────────────────────────────────────
+          Independent fixed element — NOT a sibling of the panel in a flex
+          column, so it can never appear as a detached close button.
+          Hidden on mobile while the full-screen overlay is open.
+      ──────────────────────────────────────────────────────────────────── */}
       <button
         ref={toggleBtnRef}
         onClick={() => setIsOpen((prev) => !prev)}
         aria-label={isOpen ? 'Close chat assistant' : 'Open chat assistant'}
         aria-expanded={isOpen}
         aria-haspopup="dialog"
-        className="w-14 h-14 bg-[#08361d] text-white rounded-full shadow-2xl flex items-center justify-center hover:bg-[#062814] transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#08361d] focus:ring-offset-2"
+        className={[
+          'fixed bottom-4 right-4 z-[60]',
+          'w-14 h-14 bg-[#08361d] text-white rounded-full shadow-2xl',
+          'flex items-center justify-center',
+          'hover:bg-[#062814] transition-all duration-300 hover:scale-105',
+          'focus:outline-none focus:ring-2 focus:ring-[#08361d] focus:ring-offset-2',
+          // On mobile, the full-screen panel covers everything — hide the launcher
+          isOpen ? 'hidden sm:flex' : 'flex',
+        ].join(' ')}
       >
-        {isOpen ? (
-          <X className="w-6 h-6" aria-hidden="true" />
-        ) : (
-          <MessageCircle className="w-6 h-6" aria-hidden="true" />
-        )}
+        {isOpen
+          ? <X className="w-6 h-6" aria-hidden="true" />
+          : <MessageCircle className="w-6 h-6" aria-hidden="true" />
+        }
       </button>
-    </div>
+    </>
   )
 }

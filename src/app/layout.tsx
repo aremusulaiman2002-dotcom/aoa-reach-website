@@ -129,7 +129,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Analytics />
         <SanityLive />
         <ChatWidget />
-        <div className="fixed bottom-4 right-4 z-50">
+        <div className="hidden fixed bottom-4 right-4 z-50">
           <a
             href="https://sulaiman-portfolio-sigma.vercel.app/"
             target="_blank"
