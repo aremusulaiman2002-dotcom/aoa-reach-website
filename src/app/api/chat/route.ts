@@ -3,8 +3,8 @@ import Anthropic from '@anthropic-ai/sdk'
 import { SYSTEM_PROMPT } from '@/lib/chatbot/systemPrompt'
 import { AOA_CONTACT } from '@/lib/chatbot/knowledgeBase'
 
-// Anthropic's most capable model. Swap to 'claude-sonnet-4-6' to reduce cost.
-const CLAUDE_MODEL = 'claude-opus-4-8'
+// Haiku 4.5 — lowest cost, fast, ideal for FAQ bots. Upgrade path: claude-sonnet-4-6 → claude-opus-4-8.
+const CLAUDE_MODEL = 'claude-haiku-4-5'
 
 const client = process.env.ANTHROPIC_API_KEY
   ? new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
