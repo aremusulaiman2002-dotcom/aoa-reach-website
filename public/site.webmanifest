@@ -1,0 +1,23 @@
+{
+  "name": "AOA Reach Charity Foundation",
+  "short_name": "AOA Reach",
+  "description": "Registered non-profit organization transforming lives through compassion, service, and sustainable community development in Nigeria.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#08361d",
+  "icons": [
+    {
+      "src": "/aoa-icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/aoa-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

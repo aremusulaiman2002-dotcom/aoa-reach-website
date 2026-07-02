@@ -15,6 +15,7 @@ export default function Header() {
     { name: 'About', href: '/about' },
     { name: 'Programs', href: '/programs' },
     { name: 'Impact', href: '/impact' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Get Involved', href: '/get-involved' },
   ];
 
