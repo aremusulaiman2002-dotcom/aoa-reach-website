@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { SanityLive } from '@/sanity/lib/live'
 import ChatWidget from '@/components/chatbot/ChatWidget'
+import { SITE_URL } from '@/lib/siteUrl'
 import './globals.css'
 
 const inter = Inter({
@@ -19,8 +20,6 @@ const playfairDisplay = Playfair_Display({
   display: 'swap',
 })
 
-const baseUrl = 'https://aoa-reach-website.vercel.app'
-
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -28,22 +27,26 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: 'AOA Reach Charity Foundation | Reaching Out, Touching Lives',
+    default: 'AOA Reach Charity Foundation — Nonprofit in Kwara State & Abuja, Nigeria',
     template: '%s | AOA Reach Charity Foundation',
   },
-  description: 'Registered non-profit organization transforming lives through compassion, service, and sustainable community development in Kwara State and Abuja, Nigeria.',
+  description:
+    'AOA Reach Charity Foundation is a registered Nigerian NGO (RN 8056929) transforming lives through education, healthcare, clean water, and community development in Kwara State and Abuja.',
   openGraph: {
-    title: 'AOA Reach Charity Foundation',
-    description: 'Reaching Out, Touching Lives — Transforming communities in Nigeria.',
-    url: baseUrl,
+    title: 'AOA Reach Charity Foundation — Nonprofit in Kwara State & Abuja, Nigeria',
+    description:
+      'Reaching Out, Touching Lives — AOA Reach is a registered Nigerian nonprofit delivering education, healthcare, and humanitarian aid across Kwara State and Abuja.',
+    url: SITE_URL,
     siteName: 'AOA Reach Charity Foundation',
     images: [
       {
-        url: `${baseUrl}/images/logo/aoa-reach-logo.png`,
+        // Replace with a dedicated 1200×630 OG banner when available
+        url: `${SITE_URL}/images/logo/aoa-reach-logo.png`,
         width: 1200,
         height: 630,
-        alt: 'AOA Reach Charity Foundation Logo',
+        alt: 'AOA Reach Charity Foundation',
       },
     ],
     type: 'website',
@@ -51,31 +54,31 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AOA Reach Charity Foundation',
-    description: 'Making a difference through sustainable community development in Nigeria.',
-    images: [`${baseUrl}/images/logo/aoa-reach-logo.png`],
+    title: 'AOA Reach Charity Foundation — Nonprofit in Nigeria',
+    description:
+      'Transforming communities in Kwara State & Abuja through education, healthcare, and sustainable development.',
+    images: [`${SITE_URL}/images/logo/aoa-reach-logo.png`],
   },
   keywords: [
     'AOA Reach Charity Foundation',
-    'non-profit Nigeria',
-    'charity organization Kwara State',
-    'community development Abuja',
+    'NGO Nigeria',
+    'non-profit Kwara State',
+    'charity Abuja Nigeria',
+    'community development Nigeria',
     'humanitarian aid Nigeria',
     'education support Nigeria',
     'healthcare outreach Nigeria',
+    'volunteer Nigeria',
+    'donate Nigeria NGO',
   ],
-  authors: [{ name: 'AOA Reach Charity Foundation' }],
+  authors: [{ name: 'AOA Reach Charity Foundation', url: SITE_URL }],
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-    },
+    googleBot: { index: true, follow: true },
   },
-  metadataBase: new URL(baseUrl),
   alternates: {
-    canonical: baseUrl,
+    canonical: SITE_URL,
   },
   icons: {
     icon: [
@@ -91,12 +94,22 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'NGO',
+  '@id': `${SITE_URL}/#organization`,
   name: 'AOA Reach Charity Foundation',
   alternateName: 'AOA Reach',
-  url: baseUrl,
-  logo: `${baseUrl}/images/logo/aoa-reach-logo.png`,
+  url: SITE_URL,
+  logo: {
+    '@type': 'ImageObject',
+    url: `${SITE_URL}/images/logo/aoa-reach-logo.png`,
+  },
   description:
-    'Registered non-profit organization transforming lives through compassion, service, and sustainable community development in Kwara State and Abuja, Nigeria.',
+    'Registered non-profit organization (RN 8056929) transforming lives through compassion, service, and sustainable community development in Kwara State and Abuja, Nigeria.',
+  foundingDate: '2024',
+  identifier: {
+    '@type': 'PropertyValue',
+    name: 'Nigerian NGO Registration Number',
+    value: 'RN 8056929',
+  },
   address: [
     {
       '@type': 'PostalAddress',
@@ -109,12 +122,17 @@ const jsonLd = {
       addressCountry: 'NG',
     },
   ],
+  // TODO: replace placeholders with verified profile URLs
   sameAs: [
     'https://www.facebook.com/aoareach',
     'https://twitter.com/aoareach',
     'https://www.instagram.com/aoareach',
   ],
-  foundingDate: '2024',
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer support',
+    email: 'info@aoareach.org',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -11,9 +11,8 @@ import { portableTextComponents } from '../components/PortableTextComponents'
 import { sanityFetch } from '@/sanity/lib/live'
 import { postBySlugQuery, allPostSlugsQuery, relatedPostsQuery } from '@/sanity/queries/posts'
 import { urlFor } from '@/sanity/lib/image'
+import { SITE_URL } from '@/lib/siteUrl'
 import type { Post, PostSummary, PostSlugEntry } from '@/sanity/types'
-
-const baseUrl = 'https://aoa-reach-website.vercel.app'
 
 // ─── Static params ─────────────────────────────────────────────────────────
 
@@ -43,7 +42,7 @@ export async function generateMetadata({
   const description = post.seo?.metaDescription ?? post.excerpt ?? ''
   const ogImage = post.mainImage
     ? urlFor(post.mainImage).width(1200).height(630).fit('crop').url()
-    : `${baseUrl}/images/logo/aoa-reach-logo.png`
+    : `${SITE_URL}/images/logo/aoa-reach-logo.png`
 
   return {
     title,
@@ -51,11 +50,11 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `${baseUrl}/blog/${slug}`,
+      url: `${SITE_URL}/blog/${slug}`,
       images: [{ url: ogImage, width: 1200, height: 630, alt: post.mainImage?.alt ?? title }],
     },
     twitter: { title, description, images: [ogImage] },
-    alternates: { canonical: `${baseUrl}/blog/${slug}` },
+    alternates: { canonical: `${SITE_URL}/blog/${slug}` },
   }
 }
 
@@ -92,6 +91,10 @@ export default async function BlogPostPage({
     ? urlFor(post.mainImage).width(1600).height(800).fit('crop').url()
     : null
 
+  const ogImageUrl = post.mainImage
+    ? urlFor(post.mainImage).width(1200).height(630).fit('crop').url()
+    : `${SITE_URL}/images/logo/aoa-reach-logo.png`
+
   const authorName = post.author?.name ?? 'AOA Reach Charity Foundation'
   const authorBio =
     post.author?.bio ??
@@ -102,8 +105,42 @@ export default async function BlogPostPage({
       ? urlFor(post.author.image).width(160).height(160).fit('crop').url()
       : null
 
+  // ── BlogPosting structured data ──────────────────────────────────────────
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt ?? '',
+    image: ogImageUrl,
+    url: `${SITE_URL}/blog/${slug}`,
+    datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
+    author: {
+      '@type': 'Organization',
+      name: authorName,
+      url: SITE_URL,
+    },
+    publisher: {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
+      name: 'AOA Reach Charity Foundation',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/images/logo/aoa-reach-logo.png`,
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${SITE_URL}/blog/${slug}`,
+    },
+  }
+
   return (
     <main className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
 
       {/* Full-bleed hero */}

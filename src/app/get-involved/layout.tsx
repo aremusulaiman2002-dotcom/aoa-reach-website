@@ -1,17 +1,18 @@
 import type { Metadata } from 'next'
-
-const baseUrl = 'https://aoa-reach-website.vercel.app'
+import { SITE_URL } from '@/lib/siteUrl'
 
 export const metadata: Metadata = {
   title: 'Get Involved',
-  description: 'Join AOA Reach as a volunteer, donor, or partner. Help transform lives in underserved communities across Kwara State and Abuja, Nigeria.',
+  description:
+    'Volunteer, donate, or partner with AOA Reach Charity Foundation. Help transform lives in underserved communities across Kwara State and Abuja, Nigeria.',
   openGraph: {
     title: 'Get Involved | AOA Reach Charity Foundation',
-    description: 'Volunteer, donate, partner, or provide in-kind support. Join AOA Reach in transforming communities across Nigeria.',
-    url: `${baseUrl}/get-involved`,
+    description:
+      'Volunteer, donate, or become a partner. Join AOA Reach in delivering education, healthcare, and humanitarian aid across Nigeria.',
+    url: `${SITE_URL}/get-involved`,
     images: [
       {
-        url: `${baseUrl}/images/logo/aoa-reach-logo.png`,
+        url: `${SITE_URL}/images/logo/aoa-reach-logo.png`,
         width: 1200,
         height: 630,
         alt: 'Get Involved with AOA Reach',
@@ -19,11 +20,12 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: 'Get Involved | AOA Reach Charity Foundation',
-    description: 'Volunteer, donate, or partner with AOA Reach to transform lives in Nigeria.',
+    title: 'Volunteer or Donate — AOA Reach Charity Foundation',
+    description:
+      'Volunteer, donate, or partner with AOA Reach to transform communities in Kwara State and Abuja, Nigeria.',
   },
   alternates: {
-    canonical: `${baseUrl}/get-involved`,
+    canonical: `${SITE_URL}/get-involved`,
   },
 }
 

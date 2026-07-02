@@ -1,17 +1,18 @@
 import type { Metadata } from 'next'
-
-const baseUrl = 'https://aoa-reach-website.vercel.app'
+import { SITE_URL } from '@/lib/siteUrl'
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: 'Learn about AOA Reach Charity Foundation — a registered NGO (RN 8056929) transforming lives in Kwara State and Abuja through compassion, integrity, and sustainable community development.',
+  description:
+    'Learn about AOA Reach Charity Foundation — a registered Nigerian NGO (RN 8056929) on a mission to uplift underserved communities in Kwara State and Abuja through compassion, integrity, and sustainable development.',
   openGraph: {
     title: 'About Us | AOA Reach Charity Foundation',
-    description: 'Learn about AOA Reach Charity Foundation — a registered NGO transforming lives in Kwara State and Abuja, Nigeria.',
-    url: `${baseUrl}/about`,
+    description:
+      'Our mission, story, and the values that drive AOA Reach — a registered Nigerian nonprofit transforming lives in Kwara State and Abuja.',
+    url: `${SITE_URL}/about`,
     images: [
       {
-        url: `${baseUrl}/images/logo/aoa-reach-logo.png`,
+        url: `${SITE_URL}/images/logo/aoa-reach-logo.png`,
         width: 1200,
         height: 630,
         alt: 'AOA Reach Charity Foundation',
@@ -19,11 +20,12 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: 'About Us | AOA Reach Charity Foundation',
-    description: 'Learn about AOA Reach Charity Foundation — a registered NGO transforming lives in Nigeria.',
+    title: 'About AOA Reach Charity Foundation',
+    description:
+      'Registered Nigerian NGO (RN 8056929) transforming lives in Kwara State and Abuja through compassion and community development.',
   },
   alternates: {
-    canonical: `${baseUrl}/about`,
+    canonical: `${SITE_URL}/about`,
   },
 }
 

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect, useCallback } from 'react'
+import { usePathname } from 'next/navigation'
 import { MessageCircle, X, Send, Loader2 } from 'lucide-react'
 
 interface Message {
@@ -33,6 +34,7 @@ function TypingDots() {
 }
 
 export default function ChatWidget() {
+  const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
   const [messages, setMessages] = useState<Message[]>([INITIAL_MESSAGE])
   const [input, setInput] = useState('')
@@ -120,6 +122,9 @@ export default function ChatWidget() {
       sendMessage()
     }
   }
+
+  // Must be after all hooks — Rules of Hooks forbid early returns before hooks
+  if (pathname.startsWith('/studio')) return null
 
   return (
     <>

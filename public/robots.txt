@@ -1,5 +1,7 @@
+# Generated dynamically by src/app/robots.ts — this static file is a fallback only.
 User-agent: *
 Allow: /
 Disallow: /studio/
+Disallow: /api/
 
-Sitemap: https://aoa-reach-website.vercel.app/sitemap.xml
+Sitemap: https://aoareach.org/sitemap.xml
