@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"home:%{http_code}\\\\n\" http://localhost:3099/)",
+      "Bash(curl -s -X POST http://localhost:3099/api/chat -H \"Content-Type: application/json\" -d '{\"messages\":[{\"role\":\"user\",\"content\":\"hi\"}]}' -w \"\\\\nchat:%{http_code}\\\\n\")",
+      "Bash(curl -s -X POST http://localhost:3099/api/chat -H \"Content-Type: application/json\" -d '{\"messages\":[{\"role\":\"user\",\"content\":\"How can I contact you, and how do I donate?\"}]}' -w \"\\\\nchat:%{http_code}\\\\n\")",
+      "PowerShell(Get-NetTCPConnection -LocalPort 3099 -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess -Unique | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue })"
+    ]
+  }
+}

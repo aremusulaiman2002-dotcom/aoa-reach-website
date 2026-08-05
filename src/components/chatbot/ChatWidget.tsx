@@ -237,7 +237,7 @@ export default function ChatWidget() {
                 placeholder="Type your message…"
                 disabled={isLoading}
                 maxLength={1000}
-                className="flex-1 text-sm font-sans bg-gray-50 border border-gray-200 rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#08361d]/30 focus:border-[#08361d] placeholder-gray-400 disabled:opacity-50 transition-colors"
+                className="flex-1 text-sm font-sans text-gray-900 bg-gray-50 border border-gray-200 rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#08361d]/30 focus:border-[#08361d] placeholder-gray-400 disabled:opacity-50 transition-colors"
               />
               <button
                 onClick={sendMessage}

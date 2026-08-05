@@ -3,6 +3,8 @@ import Anthropic from '@anthropic-ai/sdk'
 import { SYSTEM_PROMPT } from '@/lib/chatbot/systemPrompt'
 import { AOA_CONTACT } from '@/lib/chatbot/knowledgeBase'
 
+const CONTACT_LINE = `${AOA_CONTACT.phone} or ${AOA_CONTACT.email}`
+
 // Haiku 4.5 — lowest cost, fast, ideal for FAQ bots. Upgrade path: claude-sonnet-4-6 → claude-opus-4-8.
 const CLAUDE_MODEL = 'claude-haiku-4-5'
 
@@ -56,7 +58,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   if (!client) {
     console.error('[AOA Chatbot] ANTHROPIC_API_KEY is not set')
     return NextResponse.json(
-      { reply: `The chat service isn't available right now. Please reach us at ${AOA_CONTACT}.` },
+      { reply: `The chat service isn't available right now. Please reach us at ${CONTACT_LINE}.` },
       { status: 500 }
     )
   }
@@ -142,7 +144,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     console.error('[AOA Chatbot] Anthropic error:', err)
     return NextResponse.json(
       {
-        reply: `I'm having some trouble right now. Please try again shortly or contact us at ${AOA_CONTACT}.`,
+        reply: `I'm having some trouble right now. Please try again shortly or contact us at ${CONTACT_LINE}.`,
       },
       { status: 500 }
     )
