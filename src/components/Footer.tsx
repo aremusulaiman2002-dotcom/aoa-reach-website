@@ -49,6 +49,7 @@ export default function Footer() {
                 href="https://facebook.com/aoareach"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="AOA Reach on Facebook"
                 className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -59,6 +60,7 @@ export default function Footer() {
                 href="https://twitter.com/aoareach"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="AOA Reach on Twitter"
                 className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -69,6 +71,7 @@ export default function Footer() {
                 href="https://instagram.com/aoareach"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="AOA Reach on Instagram"
                 className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}

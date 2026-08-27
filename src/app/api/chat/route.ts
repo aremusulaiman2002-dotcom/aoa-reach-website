@@ -12,6 +12,21 @@ const client = process.env.ANTHROPIC_API_KEY
   ? new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
   : null
 
+// ─── Minimal structured request logging ────────────────────────────────────
+// Logs metadata only — never message content, names, emails, or other PII.
+type LogOutcome = 'ok' | 'rate_limited' | 'bad_request' | 'no_api_key' | 'upstream_error'
+function logRequest(outcome: LogOutcome, extra?: { status: number; errorType?: string }) {
+  console.log(
+    JSON.stringify({
+      ts: new Date().toISOString(),
+      route: '/api/chat',
+      outcome,
+      status: extra?.status,
+      errorType: extra?.errorType,
+    })
+  )
+}
+
 // ─── Rate limiting ─────────────────────────────────────────────────────────
 // Simple in-memory limiter keyed by client IP.
 // Note: on serverless (Vercel) this is best-effort per cold-start instance.
@@ -57,6 +72,7 @@ async function handleLeadCapture(data: Record<string, string>): Promise<void> {
 export async function POST(req: NextRequest): Promise<NextResponse> {
   if (!client) {
     console.error('[AOA Chatbot] ANTHROPIC_API_KEY is not set')
+    logRequest('no_api_key', { status: 500 })
     return NextResponse.json(
       { reply: `The chat service isn't available right now. Please reach us at ${CONTACT_LINE}.` },
       { status: 500 }
@@ -67,6 +83,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   const ip =
     req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'unknown'
   if (!checkRateLimit(ip)) {
+    logRequest('rate_limited', { status: 429 })
     return NextResponse.json(
       { reply: 'Too many messages — please wait a minute and try again.' },
       { status: 429 }
@@ -78,11 +95,13 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   try {
     body = await req.json()
   } catch {
+    logRequest('bad_request', { status: 400, errorType: 'invalid_json' })
     return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 })
   }
 
   const messages = (body as { messages?: unknown }).messages
   if (!Array.isArray(messages) || messages.length === 0) {
+    logRequest('bad_request', { status: 400, errorType: 'empty_messages' })
     return NextResponse.json(
       { error: 'messages must be a non-empty array' },
       { status: 400 }
@@ -100,6 +119,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
       m.content.trim().length === 0 ||
       m.content.length > 4000
     ) {
+      logRequest('bad_request', { status: 400, errorType: 'invalid_message_shape' })
       return NextResponse.json({ error: 'Invalid message in array' }, { status: 400 })
     }
   }
@@ -113,6 +133,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   // Anthropic also requires conversations to start with a 'user' turn
   const firstUserIdx = capped.findIndex(m => m.role === 'user')
   if (firstUserIdx === -1) {
+    logRequest('bad_request', { status: 400, errorType: 'no_user_turn' })
     return NextResponse.json({ error: 'No user message found' }, { status: 400 })
   }
   const history = capped.slice(firstUserIdx)
@@ -139,9 +160,12 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     }
     const reply = raw.replace(/<<<CAPTURE[\s\S]*?>>>/g, '').trim()
 
+    logRequest('ok', { status: 200 })
     return NextResponse.json({ reply })
   } catch (err) {
-    console.error('[AOA Chatbot] Anthropic error:', err)
+    const errorType = err instanceof Anthropic.APIError ? `api_error_${err.status}` : 'unknown_error'
+    console.error('[AOA Chatbot] Anthropic error:', errorType)
+    logRequest('upstream_error', { status: 500, errorType })
     return NextResponse.json(
       {
         reply: `I'm having some trouble right now. Please try again shortly or contact us at ${CONTACT_LINE}.`,

@@ -109,10 +109,12 @@ export default function Header() {
           </nav>
 
           {/* Mobile Menu Button */}
-          <motion.button 
+          <motion.button
             className="md:hidden p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             whileTap={{ scale: 0.95 }}
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMenuOpen}
           >
             <AnimatePresence mode="wait">
               {isMenuOpen ? (
